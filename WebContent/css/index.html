@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="IS-2017.css">
+    <title>ISW</title>
+  </head>
+  <body>
+    <nav>
+      <h1 class="textoCentrado">CSS</h1>
+      <ul>
+        <li><a class="seleccionable" href="#importante">Importante</a></li>
+        <li><a class="seleccionable" href="#tipografia">Tipografía</a></li>
+        <li><a class="seleccionable" href="#tamLetras">Tamaño de letras</a></li>
+        <li><a class="seleccionable" href="#botones">Botones</a></li>
+        <li><a class="seleccionable" href="#responsivo">Responsivo</a></li>
+        <li><a class="seleccionable" href="#formularios">Formularios</a></li>
+        <li><a class="seleccionable" href="#tarjeta">Tarjeta</a></li>
+        <li><a class="seleccionable" href="#tablas">Tablas</a></li>
+        <li><a class="seleccionable" href="#separadores">Separadores</a></li>
+        <li><a class="seleccionable" href="#colores">Colores</a></li>
+        <li><a class="seleccionable" href="#columnas">Columnas o divisones</a></li>
+      </ul>
+    </nav>
+    <main>
+      <header>
+        <h1>Uso de la hoja de estilos</h1>
+      </header>
+      <div class="contenedor">
+        <section id="importante">
+          <h3>¡Importante!</h3>
+          <h5 class="textoCentrado">
+            Las opciones del menú se debe poner al interior de la etiqueta:
+            <code> &lt nav &gt</code><br><br>
+            El contenido de la página se debe poner al interior de la etiqueta:
+            <code> &lt main &gt</code>
+          </h5>
+          <div class="separador3x"></div>
+        </section>
+        <hr>
+        <section id="tipografia">
+          <h3>Estilos de letra Roboto</h3>
+          <p class="letraDelgada2">Clase: letraDelgada2</p>
+          <p class="letraDelgada">Clase: letraDelgada</p>
+          <p>Sin clase (normal)</p>
+          <p class="letraGruesa">Clase: letraGruesa</p>
+          <p class="letraGruesa2">Clase: letraGruesa2</p>
+          <div class="separador2x"></div>
+        </section>
+        <hr>
+        <section id="tamLetras">
+          <h3>Tamaño de letra</h3>
+          <h1>&lt h1 &gt</h1>
+          <h2>&lt h2 &gt</h2>
+          <h3>&lt h3 &gt</h3>
+          <h4>&lt h4 &gt</h4>
+          <h5>&lt h5 &gt</h5>
+          <h6>&lt h6 &gt</h6>
+          <p>&lt p &gt</p>
+          <div class="separador2x"></div>
+        </section>
+        <hr>
+        <section id="botones">
+          <h3>Botones</h3>
+          <button type="button" name="button">Botón</button>
+          <button type="button" name="button">Botón</button>
+        </section>
+        <div class="separador2x"></div>
+        <hr>
+        <section id="responsivo">
+          <h3>Activar diseño responsivo</h3>
+          <p>
+            Asegudarate de que cualquier contenido que no desea ser puesto en el menú de navegacion 
+            lateral sea puesto al interior de la etiqueta &lt main &gt.
+            Dentro de &lt main &gt debe ir un &lt div &gt con la clase 'contenedor'. De la sigiente
+            forma
+          <p>
+          <div class="separador2x"></div>
+          <div class="tarjeta">
+            <p>
+              <code>
+                &lt body &gt <br> 
+                &nbsp;&lt header &gt <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&lt /header &gt <br>             
+                &nbsp; &lt main  &gt <br>  
+                &nbsp;  &nbsp;&lt div class="contenedor" &gt<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Todo lo que debe ser responsivo<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;  &nbsp; &lt /div &gt<br> 
+                &nbsp; &lt /main  &gt <br>
+                &lt /body &gt <br>             
+              </code>
+            </p>
+          </div>
+          <div class="separador2x"></div>
+        </section>
+        <hr>
+        <section id="formularios">
+          <h3>Formularios</h3>
+          <form name="prueba">
+            <h5>Texto normal</h5>
+            <input type="text" name="textoNormal" value="" />
+            <br>
+            <h5>Contraseña</h5>
+            <input type="password" name="contrasena" value="" />
+            <br>
+            <h5>Radio buttons</h5> 
+            <br>
+
+            <input type="radio" id="Numero1" name="Opciones"/>
+            <label for="Numero1">Num 1</label>
+
+            <input type="radio" id="Numero2" name="Opciones"/>
+            <label for="Numero2">Num 2</label>
+
+            <input type="radio" id="Numero3" name="Opciones"/>
+            <label for="Numero3">Num 3</label>
+            <br>
+
+            <h5>Combo box</h5>
+            <select name="lista">
+              <option>Primera</option>
+              <option>Segunda</option>
+              <option>Tercera</option>
+              <option>Cuarta </option>
+            </select>
+            <br>
+
+            <h5>Check box</h5>
+            <input type="checkbox" name="Opciones" value="Opc1" id="op1"/>
+            <label for="op1" >Opcion 1</label>
+            <input type="checkbox" name="Opciones" value="Opc2" id="op2"/>
+            <label for="op2" >Opcion 2</label>
+            <input type="checkbox" name="Opciones" value="Opc3" id="op3"/>
+            <label for="op3" >Opcion 3</label>
+            <input type="checkbox" name="Opciones" value="Opc4" id="op4"/>
+            <label for="op4" >Opcion 4</label>
+          </form>
+
+          <h6>Para su funcionamiento el código HTML debe de escribirse de la siguiente forma</h6><br>
+          <div class="tarjeta">
+            <p>
+              <code>
+                &lt main &gt <br> 
+                &nbsp; &lt form  &gt <br>  
+                &nbsp;  &nbsp;&lt input type="text" /&gt<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;  &nbsp; &lt input type="radio" id="Numero1" name="Opciones"/ &gt<br> 
+                &nbsp;  &nbsp; &lt label for="Numero1" &gt Num 1 &lt label &gt<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;  &nbsp; &lt input type="checkbox" id="op4" name="Opciones"/ &gt<br> 
+                &nbsp;  &nbsp; &lt label for="op4" &gt Opcion 1 &lt label &gt<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp; &lt /form  &gt <br>
+                &lt /main &gt <br> 
+              </code>
+            </p>
+          </div>
+          <div class="separador2x"></div>
+        </section>
+        <hr>
+
+        <section id="tarjeta">
+          <h3>Tarjetas</h3>
+          <div class="tarjeta">
+            <p>
+              Este texto, al igual que todos los códigos HTML escritos en esta página estan incrustados
+              al interior de una tarjeta. Las tarjetas abarcan todo el ancho dispoble y el largo 
+              necesario para su contenido. <br><br>
+              Para usar las tarjetas escribe el código HTML de la siguiente forma<br><br>
+              <code>
+                &lt main &gt <br> 
+                &nbsp; &lt div class="tarjeta"  &gt <br>  
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;  &nbsp; Contenido de la tarjeta<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+                &nbsp; &lt /div  &gt <br>
+                &lt /main &gt <br> 
+              </code>
+            </p>
+          </div>
+          <div class="separador2x"></div>
+        </section>
+        <hr>
+
+        <section id="tablas">
+          <h3>Tablas</h3>
+          <p>Las tablas ocupan el ancho total disponible y se generan de la sigueinte forma</p>
+          <div class="separador2x"></div>
+          <div class="tarjeta">
+            <p>
+              Este texto, al igual que todos los códigos HTML escritos en esta página estan incrustados
+              al interior de una tarjeta. Las tarjetas abarcan todo el ancho dispoble y el largo 
+              necesario para su contenido. <br><br>
+              Para usar las tarjetas escribe el código HTML de la siguiente forma<br><br>
+              <code>
+                &lt main &gt <br> 
+                &nbsp; &lt table  &gt <br>  
+
+                &nbsp;&nbsp;&nbsp; &lt thead  &gt <br>  
+                &nbsp;&nbsp;&nbsp; &nbsp; &lt tr  &gt <br>  
+                &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &lt th  &gt Nombre de Columna &lt /th  &gt <br>
+                &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &lt th  &gt Nombre de Columna &lt /th  &gt <br>
+                &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &lt th  &gt Nombre de Columna &lt /th  &gt <br>
+                &nbsp;&nbsp;&nbsp; &nbsp; &lt /tr  &gt <br>  
+                &nbsp;&nbsp;&nbsp; &lt /thead  &gt <br> 
+
+                &nbsp;&nbsp;&nbsp; &lt tbody  &gt <br>  
+                &nbsp;&nbsp;&nbsp; &nbsp; &lt tr  &gt <br>  
+                &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &lt td  &gt Nombre de Elemento &lt /td  &gt <br>
+                &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &lt td  &gt Nombre de Elemento &lt /td  &gt <br>
+                &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &lt td  &gt Nombre de Elemento &lt /td  &gt <br>
+                &nbsp;&nbsp;&nbsp; &nbsp; &lt /tr  &gt <br>  
+                &nbsp;&nbsp;&nbsp; &lt /tbody  &gt <br>  
+
+                &nbsp; &lt /table  &gt <br>
+                &lt /main &gt <br> 
+              </code>
+            </p>
+          </div>
+          <div class="separador4x"></div>
+          <table>
+            <thead>
+              <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+                <th>Columna 4</th>
+                <th>Columna 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+              </tr>
+              <tr>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+              </tr>
+              <tr>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+                <td>Elemento</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="separador3x"></div>
+        </section>
+        <hr>
+
+        <section id="separadores">
+          <h3>Separadores</h3>
+          <p>
+            Los separadores se emplean mediante las siguientes clases:<br>
+          </p>
+          <div class="separador2x"></div>
+          <div class="tarjeta">
+            <ul class="textoCentrado">
+              <li>separador1x => 0.9em de separacion</li>
+              <li>separador2x => 1.4em de separacion</li>
+              <li>separador3x => 2.2em de separacion</li>
+              <li>separador4x => 3em de separacion</li>
+              <li>separador5x => 4em de separacion</li>
+            </ul>
+          </div>
+          <div class="separador2x"></div>
+          <span>Siguiente linea separada por separador1x </span>
+          <div class="separador1x"></div>
+          <span>Siguiente linea separada por separador2x </span>
+          <div class="separador2x"></div>
+          <span>Siguiente linea separada por separador3x </span>
+          <div class="separador3x"></div>
+          <span>Siguiente linea separada por separador3x </span>
+          <div class="separador3x"></div>
+          <span>Siguiente linea separada por separador4x </span>
+          <div class="separador4x"></div>
+          <span>La separacion entre esta linea y la anterior fue con un separador4x </span>
+          <div class="separador3x"></div>
+        </section>
+        <hr>
+
+
+        <section id="colores">
+          <h3>Colores</h3>
+          <p>
+            A continuación se muestran los colores para fondo disponibles y el nombre de la clase 
+            que se debe escribir para poder usarlo.
+          </p>
+
+          <div class="separador3x"></div>
+          <div class="rojo textoBlanco textoCentrado">
+            <div class="separador1x"></div>
+            <p>rojo</p>
+            <div class="separador1x"></div>
+          </div>
+
+          <div class="separador3x"></div>
+          <div class="azul textoBlanco textoCentrado">
+            <div class="separador1x"></div>
+            <p>azul</p>
+            <div class="separador1x"></div>
+          </div>
+
+          <div class="separador3x"></div>
+          <div class="gris textoBlanco textoCentrado">
+            <div class="separador1x"></div>
+            <p>gris</p>
+            <div class="separador1x"></div>
+          </div>
+
+          <div class="separador3x"></div>
+        </section>
+        <hr>
+
+        <section id="columnas" class="col2">
+          <h3>Columnas</h3>
+          <p>
+            A continuación se muestran los colores para fondo disponibles y el nombre de la clase 
+            que se debe escribir para poder usarlo.
+          </p>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna12 rojo">   <p> Division en columna12  </p>    </div>
+          </div>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna6 rojo">   <p> Division en columna6  </p>    </div>
+            <div class="columna6 azul">   <p> Division en columna6   </p>   </div>
+          </div>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna4 rojo">   <p> Division en columna4 </p>   </div>
+            <div class="columna4 azul">   <p> Division en columna4 </p>   </div>
+            <div class="columna4 gris">   <p> Division en columna4 </p>    </div>
+          </div>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna3 rojo">   <p> Division en columna3 </p>   </div>
+            <div class="columna3 azul">   <p> Division en columna3 </p>   </div>
+            <div class="columna3 gris">   <p> Division en columna3 </p>   </div>
+            <div class="columna3 rojo">   <p> Division en columna3 </p>   </div>
+          </div>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna1 rojo">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 azul">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 gris">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 rojo">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 azul">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 gris">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 rojo">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 azul">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 gris">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 rojo">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 azul">   <p> Division en columna1 </p>   </div>
+            <div class="columna1 gris">   <p> Division en columna1 </p>   </div>
+          </div>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna10 rojo">   <p> Division en columna10 </p>   </div>
+            <div class="columna2 azul">   <p> Division en columna2 </p>   </div>
+          </div>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna9 rojo">   <p> Division en columna9 </p>   </div>
+            <div class="columna2 azul">   <p> Division en columna2 </p>   </div>
+            <div class="columna1 gris">   <p> Division en columna1 </p>    </div>
+          </div>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna8 rojo">   <p> Division en columna8 </p>   </div>
+            <div class="columna4 azul">   <p> Division en columna4 </p>   </div>
+          </div>
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna5 rojo">   <p> Division en columna5 </p>   </div>
+            <div class="columna7 azul">   <p> Division en columna7 </p>   </div>
+          </div>
+
+
+          <div class="separador2x"></div>
+
+          <div class="columnas textoBlanco textoCentrado">
+            <div class="columna1 rojo">   <p> Division en columna1 </p>   </div>
+            <div class="columna11 azul">   <p> Division en columna11 </p>    </div>
+          </div>
+
+
+
+
+          <div class="separador3x"></div>
+        </section>
+        <hr>
+      </div>
+
+
+      <footer>
+        <div class="separador3x"></div>
+        <div class="columnas">
+          <div class="columna6">
+            <h4>Instituto Politécnico Nacional</h4>
+            <h5>Escuela Superior de Cómputo</h5>
+          </div>
+          <div class="columna3">
+            <h6>Ingeniería de Software</h6><br>
+            <h6>2018-1</h6><br>
+            <h6>3CM2</h6>
+          </div>
+          <div class="columna3">
+            <p>
+              Hoja de estilos diseñada para ser implementada dentro del proyecto desarrollado por el 
+              grupo 3CM2 en el semestre 2018-1
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+  </body>
+
+</html>
+
+<!--        
+        <section id="id">
+          <h3>Titulo de seccion</h3>
+          contenido
+          <div class="separador3x"></div>
+        </section>
+        <hr>
+-->

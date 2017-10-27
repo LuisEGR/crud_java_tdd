@@ -63,6 +63,7 @@
                     <groupId>mysql</groupId>
                     <artifactId>mysql-connector-java</artifactId>
                     <version>5.1.6</version>
+                    
                 </dependency>
 		<!-- Below dependency is for Jackson integration -->
 		<dependency>

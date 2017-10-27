@@ -1,0 +1,11 @@
+{
+  "estado": 0,
+  "municipio": 0,
+  "deportes": [
+    0,
+    1
+  ],
+  "sexo": 1,
+  "nombre": "Luis",
+  "apellidos": "González"
+}

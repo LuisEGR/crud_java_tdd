@@ -124,7 +124,7 @@ public class PersonaServiceImpl implements CrudService {
     public Response colocarPersona(Persona persona) {
         Response.ResponseBuilder responseBuilder = null;
         //responseBuilder = Response.ok(persona, "application/json;charset=UTF-8");
-        responseBuilder = Response.ok("Ok", "application/json;charset=UTF-8");
+        //responseBuilder = Response.ok("Ok", "application/json;charset=UTF-8");
         return responseBuilder.build();
     }
 

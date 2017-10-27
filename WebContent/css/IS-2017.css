@@ -1,0 +1,548 @@
+/*
+**Autor: Grupo 3CM2
+**Fecha: 10-10-2017
+**Codigo desarrollado por estudiantes de la Escuela Superior de Cómputo
+del Instituto Politécnico Nacional
+**Semestre 2018-1
+*/
+/*======Definiendo tipos de letra======*/
+@font-face {
+  font-family: 'Roboto-delgado2';
+  font-weight: 100;
+  src:    url('../fonts/Roboto-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Thin.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto-delgado';
+  font-weight: 200;
+  src:    url('../fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 100;
+  src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto-grueso';
+  font-weight: 700;
+  src:    url('../fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto-grueso2';
+  font-weight: 900;
+  src:    url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Bold.ttf') format('truetype');
+}
+/*======Clases para controlar colores de fondo ======*/
+.azul{
+  background-color: #039BE5;
+}
+.rojo{
+  background-color: #b71c1c;
+}
+.gris{
+  background-color: #9E9E9E;
+}
+
+.textoBlanco{
+  color: white
+}
+/*======Asiganando ancho y largo total al documento html======*/
+html{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: Roboto, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/*======Asiganando tamaño a etiquetas principales======*/
+main{
+  float: right;
+  width: 85%;
+  height: 100%;
+}
+nav{
+  background-color: #FAFAFA;
+  box-shadow: 0px 0 5px gray;
+  float: left;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  width: 15%;
+}
+footer{
+  background-color: #6B1740;
+  color: #FFFFFF;
+  padding: 1% 10%;
+}
+header{
+  background-color: #6B1740;
+  color: #FAFAFA !important;
+  padding: 1% 10%
+}
+/*====== Definiendo tamaño de letra para etiquetas ======*/
+a{
+  font-size: 15px;
+}
+p{
+  font-size: 16px;
+}
+
+header h1,header h2, header h3, header h4, header h5, header h6 { /*Letras blancas para cualquier h dentro de etiqueta header*/
+  color: #fff;
+}
+footer h1,footer h2, footer h3, footer h4, footer h5, footer h6 {/*Letras blancas para cualquier h dentro de etiqueta footer*/
+  color: #fff;
+}
+h1 {
+  color: #212121;
+  font-family: Roboto-delgado;
+  font-size: 350%;
+  margin: 0.9em 0 0.8em 0;
+}
+h2 {
+  color: #424242;
+  font-family: Roboto-delgado;
+  font-size: 300%;
+  margin: 0.8em 0 0.7em 0;
+}
+h3 {
+  color: #616161;
+  font-family: Roboto-delgado;
+  font-size: 250%;
+  margin: 0.7em 0 0.6em 0;
+}
+h4 {
+  color: #7f8c8d;
+  font-family: Roboto-delgado2;
+  font-size: 200%;
+  margin: 0.6em 0 0.5em 0;
+}
+h5 {
+  color: #757575;
+  font-family: Roboto-delgado2;
+  font-size: 150%;
+  margin: 0.5em 0 0.4em 0;
+}
+h6 {
+  color: #9E9E9E;
+  font-family: Roboto-delgado2;
+  font-size: 100%;
+  margin: 0.4em 0 0.3em 0;
+}
+/**======Clases para controlar tipos de letras ======*/
+.letraDelgada2 {
+  font-family: Roboto-delgado2;
+}
+.letraDelgada {
+  font-family: Roboto-delgado;
+}
+.letraGruesa {
+  font-family: Roboto-grueso;
+}
+.letraGruesa2 {
+  font-family: Roboto-grueso2;
+}
+/*======Clases para botones y similares ======*/
+.seleccionable:hover{
+  background-color:#E0E0E0;
+  outline: #E0E0E0 solid;
+}
+a.seleccionable{
+  color: #9E9E9E;
+  display: block;
+  padding: 3% 0 3% 15%;
+  text-decoration: none;
+}
+a.desapercibido{
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  background-color: #039BE5;
+  border: 0;
+  border-radius: 2px;
+  /*box-shadow: 0 0 6px black;*/
+  color: white;
+  font-size: 15px;
+  margin: 0;
+  overflow: hidden;
+  padding: 8px 40px;
+  position: relative;
+  margin: 7px 5px;
+}
+button:after {
+  background: #3f51b5;
+  border-radius: 70% 70% 0 70%;
+  content: '';
+  display: block;
+  height: 1em;
+  left: 0;
+  margin-left: 50%;
+  margin-top: 20px;
+  opacity: .6;
+  position: absolute;
+  transform: scale(0);
+  width: 1em;
+}
+@keyframes onda {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(20);
+  }
+  90% {
+    transform: scale(30);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(30);
+  }
+}
+button:not(:active):after {
+  animation: onda 1.5s ease-out ;
+}
+/*Evitar fallas al cargar la pagina*/
+button:after {        /*Evita efecto de click al cargar pagina*/
+  visibility: hidden;
+}
+button:focus:after {    /*Hace posible crear el efecto*/
+  outline: none;
+  visibility: visible;
+}
+button:focus{            /*Elimina contorno del botón emergente al hacer click*/
+  outline: none;
+  visibility: visible;
+}
+
+/*=======================================Clases para listas=======================================*/
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*=================================Clases para diseño responsivo==================================*/
+.contenedor{
+  padding: 10px 10% 0 10%;
+}
+
+
+/*=============================Clases para alinear texto y otras cosas============================*/
+.textoCentrado{
+  text-align: center;
+}
+
+
+/*======Clases y etiqueta para separaciones ======*/
+hr{
+  margin: 15px 0;
+}
+
+
+/*==========================================Formularios==========================================*/
+form{
+  outline: 50px;
+}
+label{
+  font-size: 15px;
+  margin: 0px 0px 20px 0px;
+  color: gray;
+}
+input{
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-style: solid;
+  border-color: gray;
+  font-size: 15px;
+  outline: none;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  padding-bottom: 5px
+}
+
+/**********Radio y check buttons******************/
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked,
+[type="radio"]:not(:checked),
+[type="radio"]:checked{               /*Oculta los botones si no siguen el formato dado*/
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+input[type="radio"]:not(:checked) + label,
+input[type="radio"]:checked + label,
+span input[type="radio"]:not(:checked) + label,
+span input[type="radio"]:checked + label {   /*Activa el estilo a label unicamente cuando se encuentre*/
+  padding-left: 35px;                   /*Precedida por la etiqueta input type radio y este se en*/
+  position: relative;                   /*encuentra seleccionado o no*/
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 1rem;
+  margin: 15px 0px 20px 15px;
+  transition: 1s ease;                  /*Efecto para que label aparezca al cargar la pagina*/
+}
+input[type="radio"] + label:before,
+input[type="radio"] + label:after,
+span input[type="radio"] + label:before,
+span input[type="radio"] + label:after {     /*Estilo para el circulo del botón*/
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  transition: .5s ease;
+  border-radius: 50%;
+}
+input[type="radio"]:not(:checked) + label:before,
+input[type="radio"]:not(:checked) + label:after,
+span input[type="radio"]:not(:checked) + label:before,
+span input[type="radio"]:not(:checked) + label:after { /*Estilo para el circulo del botón unicamente cuando*/
+  border: 2px solid gray;                     /*no se encuentra seleccionado*/
+}
+input[type="radio"]:not(:checked) + label:after,
+span input[type="radio"]:not(:checked) + label:after {
+  -webkit-transform: scale(0);              /*Efecto de circulo en decrecimiento*/
+  transform: scale(0);
+}
+input[type="radio"]:checked + label:before,
+span input[type="radio"]:checked + label:before {
+  border: 2px solid transparent;  /*Mantiene borde del circulo hasta que se termine la animacion*/
+  /*de llenado*/
+}
+input[type="radio"]:checked + label:after,
+span input[type="radio"]:checked + label:after {
+  border: 2px solid #6B1740;
+  background-color: #6B1740;
+  -webkit-transform: scale(1.02);   /*Efecto de circulo en crecimiento*/
+  transform: scale(1.02);
+}
+
+/*************************Combo box*************************/
+select{
+  margin: 0;
+  font-size: 15px;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  outline: none;
+  transition: 1s ease;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+option{
+  outline: none;
+  border: 0;
+  box-shadow: 0 0 6px black;
+  transition: 4s ease;
+
+}
+/***************************Checkbox***************************/
+[type="checkbox"] + label { /*Estilo para los checkbox*/
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-left: 20px;
+  -webkit-user-select: none;  /*Para chrome y safari*/
+  -moz-user-select: none;     /*Para firefox */
+  -ms-user-select: none;      /*Para Explorer de version 10 en adelante*/
+}
+[type="checkbox"] + label:before{ /*Estilo que se aplica al dar click sobre el elemento*/
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  z-index: 0;
+  border: 2px solid gray;
+  border-radius: 1px;
+  margin-top: 2px;
+  transition: .3s;
+}
+[type="checkbox"]:checked + label:before { /*Estilo que se aplica al ser seleccionado*/
+  top: -4px;
+  left: -5px;
+  width: 12px;
+  height: 22px;
+  border-top: 2px solid transparent;    /*Esta y las siguientes 3 lineas permiten generar*/
+  border-left: 2px solid transparent;   /*la palomita que se percibe*/
+  border-right: 2px solid #6B1740;
+  border-bottom: 2px solid #6B1740;
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+/*=====================================Paneles sobresalientes=====================================*/
+.tarjeta{
+  box-shadow: 0 0 12px gray;
+  margin: 5px;
+  border-radius: 2px;
+  padding: 25px;
+}
+/*=============================================Tablas=============================================*/
+table {
+  width: 100%;
+  border-collapse: collapse; /*Combina bodes de las celdas adyacentes*/
+}
+
+thead {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+td, th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+  border-collapse: separate;
+}
+
+/*==========================================Separadores==========================================*/
+.separador1x{
+  height: 0.9em;
+}
+.separador2x{
+  height: 1.4em;
+}
+.separador3x{
+  height: 2.2em;
+}
+.separador4x{
+  height: 3em;
+}
+.separador5x{
+  height: 4em;
+}
+
+/*======================================Divisiones o columnas=====================================*/
+.columnas::after {
+    content: "";
+    clear: both;
+    display: table;
+    box-sizing: border-box
+}
+
+.columna12 {                /*Ocupa 12 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 99.6%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna11 {                /*Ocupa 11 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 91.2666%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna10 {                /*Ocupa 10 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 82.9333%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna9 {                /*Ocupa 9 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 74.6%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna8 {                /*Ocupa 8 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 66.2666%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna7 {                /*Ocupa 7 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 57.9333%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna6 {                /*Ocupa 6 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 49.6%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna5 {                /*Ocupa 5 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 41.2666%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna4 {                /*Ocupa 4 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 32.9333%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna3 {                /*Ocupa 3 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 24.6%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna2 {                /*Ocupa 2 espacios de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 16.2666%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+.columna1 {                /*Ocupa 1 espacio de los 12 disponibles*/
+    float: left;
+    padding: 15px;
+    width: 7.9333%;
+    box-sizing: border-box;
+    margin: 1% 0.2%
+}
+
+
+#search-input{
+  position: absolute;
+  right: 20px;
+  margin: 0;
+  width: 30%;
+  border-color: rgba(96, 125, 139, 0.11);
+  height: 32px;
+}
