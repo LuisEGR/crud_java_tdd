@@ -113,10 +113,13 @@ Respuesta:
 
 Aplicaciones / Librerias / Framerowks utilizados:
 
-- [https://netbeans.org/] (NetBeans IDE) 
-- [http://tomcat.apache.org/] (Tomcat 8)
-- [https://maven.apache.org/] (Maven) - Software project management and comprehension tool
-- [https://jersey.github.io/] (Jersey) - RESTful Web Services in Java
-- [https://mvnrepository.com/artifact/mysql/mysql-connector-java] (mysql-connector-java) <- desde maven
-- [https://github.com/FasterXML/jackson] (Jackson) - formerly known as the standard JSON library for Java
-- [http://junit.org/](JUnit) - programmer-friendly testing framework for Java 8
+- [NetBeans IDE](https://netbeans.org/) 
+- [Tomcat 8](http://tomcat.apache.org/)
+- [(Maven) - Software project management and comprehension tool](https://maven.apache.org/)
+- [Jersey - RESTful Web Services in Java](https://jersey.github.io/) 
+- [mysql-connector-java](https://mvnrepository.com/artifact/mysql/mysql-connector-java) 
+- [Jackson formerly known as the standard JSON library for Java](https://github.com/FasterXML/jackson) 
+- [JUnit - programmer-friendly testing framework for Java 8](http://junit.org/)
+
+
+[![https://travis-ci.org/](https://workablehr.s3.amazonaws.com/uploads/account/logo/11901/large_Mascot-fullcolor-png.png)](Travis)
