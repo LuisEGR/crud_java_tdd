@@ -23,24 +23,6 @@ import static org.junit.Assert.*;
  */
 public class PersonasDaoTest {
     
-    public PersonasDaoTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of borrarPersona method, of class PersonasDao.
@@ -52,7 +34,7 @@ public class PersonasDaoTest {
         PersonasDao instance = new PersonasDao();
         instance.borrarPersona(persona);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -66,7 +48,7 @@ public class PersonasDaoTest {
         int result = instance.obtenerNumeroPersonas();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -83,7 +65,7 @@ public class PersonasDaoTest {
         Par result = instance.obtenerPersonas(min, max, q);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -98,7 +80,7 @@ public class PersonasDaoTest {
         Persona result = instance.obtenerPersona(id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -111,7 +93,7 @@ public class PersonasDaoTest {
         PersonasDao instance = new PersonasDao();
         instance.insertarPersona(persona);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -124,7 +106,7 @@ public class PersonasDaoTest {
         PersonasDao instance = new PersonasDao();
         instance.actualizarPersona(persona);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -138,7 +120,7 @@ public class PersonasDaoTest {
         ArrayList<Par> result = instance.obtenerEstadisticasEstados();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -153,7 +135,7 @@ public class PersonasDaoTest {
         ArrayList<Par> result = instance.obtenerEstadisticasMunicipios(estado);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -167,7 +149,7 @@ public class PersonasDaoTest {
         ArrayList<Par> result = instance.obtenerEstadisticasSexos();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -181,7 +163,7 @@ public class PersonasDaoTest {
         ArrayList<Par> result = instance.obtenerEstadisticasAnios();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

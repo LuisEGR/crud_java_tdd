@@ -5,9 +5,7 @@
  */
 package test.java.main.dao;
 
-import java.util.ArrayList;
-import main.dao.SexosDao;
-import main.datos.Sexo;
+import main.dao.Dao;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,22 +15,17 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Luis
+ * @author luis
  */
-public class SexosDaoTest {
-    
-
-
-    /**
-     * Test of obtenerSexos method, of class SexosDao.
+public class DaoTest {
+     /**
+     * Test of cerrarConexion method, of class Dao.
      */
     @Test
-    public void testObtenerSexos() {
-        System.out.println("obtenerSexos");
-        SexosDao instance = new SexosDao();
-        ArrayList<Sexo> expResult = null;
-        ArrayList<Sexo> result = instance.obtenerSexos();
-        assertEquals(expResult, result);
+    public void testCerrarConexion() {
+        System.out.println("cerrarConexion");
+        Dao instance = null;
+        instance.cerrarConexion();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
