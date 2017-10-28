@@ -23,3 +23,5 @@ hs_err_pid*
 /target/
 /nbproject/
 .DS_Store
+node_modules
+package-lock.json

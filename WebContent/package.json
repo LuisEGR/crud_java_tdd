@@ -1,9 +1,27 @@
 {
-  "name": "crud", "version": "1.0.0", "description": "Testing CRUD with Java Servlets", "main": "crud.jsp", "directories": {
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "Testing CRUD with Java Servlets",
+  "main": "crud.jsp",
+  "directories": {
     "lib": "lib"
-  }, "scripts": {
+  },
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }, "author": "ESCOM", "license": "ISC", "dependencies": {
-    "angular": "^1.5.5", "angular-animate": "^1.5.5", "angular-aria": "^1.5.5", "angular-material": "^1.1.5", "angular-material-data-table": "^0.10.10", "angular-material-icons": "^0.7.1", "angular-messages": "^1.5.5", "angular-sanitize": "^1.5.5", "highcharts": "^6.0.2", "lodash": "^4.17.4", "md-data-table": "^2.2.0"
+  },
+  "author": "ESCOM",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-material": "^1.1.5",
+    "angular-material-data-table": "^0.10.10",
+    "angular-material-icons": "^0.7.1",
+    "angular-messages": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "highcharts": "^6.0.2",
+    "lodash": "^4.17.4",
+    "md-data-table": "^2.2.0"
   }
 }
