@@ -1,202 +1,204 @@
 <!DOCTYPE html>
 <html ng-app="EjemploCRUD" ng-controller="crudController">
 
-<head>
-  <meta charset="utf-8">
-  <title>Formulario</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
 
-  <link rel="stylesheet" href="./css/simplegrid.css">
-  <link rel="stylesheet" href="./css/angular-material.css">
-  <link rel="stylesheet" href="./css/angular-material-icons.css">
-  <link rel="stylesheet" href="./css/md-data-table.css">
-  <link rel="stylesheet" href="./css/IS-2017.css">
+    <link rel="stylesheet" href="./css/simplegrid.css">
+    <link rel="stylesheet" href="./css/angular-material.css">
+    <link rel="stylesheet" href="./css/angular-material-icons.css">
+    <link rel="stylesheet" href="./css/md-data-table.css">
+    <link rel="stylesheet" href="./css/IS-2017.css">
 
-  <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
-  <script type="text/javascript" src="./node_modules/angular-aria/angular-aria.js"></script>
-  <script type="text/javascript" src="./node_modules/angular-animate/angular-animate.js"></script>
-  <script type="text/javascript" src="./node_modules/angular-material/angular-material.js"></script>
-  <script type="text/javascript" src="./node_modules/angular-material-icons/angular-material-icons.js"></script>
-  <script type="text/javascript" src="./node_modules/angular-sanitize/angular-sanitize.js"></script>
-  <script type="text/javascript" src="./node_modules/angular-material-data-table/dist/md-data-table.js"></script>
-  <script type="text/javascript" src="./node_modules/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-material-icons/angular-material-icons.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-material-data-table/dist/md-data-table.js"></script>
+    <script type="text/javascript" src="./node_modules/lodash/lodash.min.js"></script>
 
-  <script type="text/javascript" src="./js/crudExample.app.js"></script>
-  <script type="text/javascript" src="./js/crudExample.controller.js"></script>
-</head>
+    <script type="text/javascript" src="./js/crudExample.app.js"></script>
+    <script type="text/javascript" src="./js/crudExample.controller.js"></script>
+  </head>
 
-<body>
+  <body>
 
-  <nav>
-    <h1 class="textoCentrado">CRUD</h1>
-    <ul>
-      <li>
-        <a class="seleccionable" ng-click="addUser($event)" href="#">Agregar</a>
-      </li>
-      <li>
-        <a class="seleccionable" href="crud">Recargar</a>
-      </li>
-    </ul>
-  </nav>
+    <nav>
+      <h1 class="textoCentrado">CRUD</h1>
+      <ul>
+        <li>
+          <a class="seleccionable" ng-click="addUser($event)" href="#">Agregar</a>
+        </li>
+        <li>
+          <a class="seleccionable" href="crud">Recargar</a>
+        </li>
+      </ul>
+    </nav>
 
-  <main class="gris">
-    <header>
-      <h1>Registro</h1>
-    </header>
+    <main class="gris">
+      <header>
+        <h1>Registro</h1>
+      </header>
 
-    <div class="contenedor gris">
-      <div class="grid">
-        <md-card>
-          <md-toolbar class="md-table-toolbar md-default">
-            <div class="md-toolbar-tools">
-              <span>Usuarios</span>
+      <div class="contenedor gris">
+        <div class="grid">
+          <md-card>
+            <md-toolbar class="md-table-toolbar md-default">
+              <div class="md-toolbar-tools">
+                <span>Usuarios</span>
 
-              <input type="search" ng-model="search" placeholder="Buscar" id="search-input" ng-change="getData(1,query.limit)" ng-model-options="{debounce: 200}">
-            </div>
-          </md-toolbar>
+                <input type="search" ng-model="search" placeholder="Buscar" id="search-input" ng-change="getData(1, query.limit)" ng-model-options="{
+                      debounce: 200
+                    }">
+              </div>
+            </md-toolbar>
 
-          <md-table-container>
-            <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
-              <thead md-head>
-                <tr md-row>
-                  <th md-column>Nombre</th>
-                  <th md-column>Apellido Paterno</th>
-                  <th md-column>Apellido Materno</th>
-                  <th md-column>Editar</th>
-                  <th md-column>Borrar</th>
+            <md-table-container>
+              <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+                <thead md-head>
+                  <tr md-row>
+                    <th md-column>Nombre</th>
+                    <th md-column>Apellido Paterno</th>
+                    <th md-column>Apellido Materno</th>
+                    <th md-column>Editar</th>
+                    <th md-column>Borrar</th>
+                  </tr>
+                </thead>
+                <tbody md-body>
+                  <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="usuario in users">
+                    <td md-cell>{{usuario.nombre}}</td>
+                    <td md-cell>{{usuario.apPaterno}}</td>
+                    <td md-cell>{{usuario.apMaterno}}</td>
+                    <td md-cell>
+                <md-button class="md-raised" ng-click="editarUsuario($event, usuario.idPersona)">
+                  <ng-md-icon icon="mode_edit" size="24"></ng-md-icon>
+                </md-button>
+                </td>
+                <td md-cell>
+                <md-button class="md-raised" ng-click="eliminarUsuario($event, usuario.idPersona)">
+                  <ng-md-icon icon="delete" size="24"></ng-md-icon>
+                </md-button>
+                </td>
                 </tr>
-              </thead>
-              <tbody md-body>
-                <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="usuario in users">
-                  <td md-cell>{{usuario.nombre}}</td>
-                  <td md-cell>{{usuario.apPaterno}}</td>
-                  <td md-cell>{{usuario.apMaterno}}</td>
-                  <td md-cell>
-                    <md-button class="md-raised" ng-click="editarUsuario($event, usuario.idPersona)">
-                      <ng-md-icon icon="mode_edit" size="24"></ng-md-icon>
-                    </md-button>
-                  </td>
-                  <td md-cell>
-                    <md-button class="md-raised" ng-click="eliminarUsuario($event, usuario.idPersona)">
-                      <ng-md-icon icon="delete" size="24"></ng-md-icon>
-                    </md-button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </md-table-container>
+                </tbody>
+              </table>
+            </md-table-container>
 
-          <md-table-pagination md-label="{{label}}" md-limit="query.limit" md-limit-options="[5, 10, 20, 50]" md-page="query.page"
-            md-total="{{numeroPersonas}}" md-on-paginate="getData" md-page-select></md-table-pagination>
-        </md-card>
+            <md-table-pagination md-label="{{label}}" md-limit="query.limit" md-limit-options="[5, 10, 20, 50]" md-page="query.page"
+                                 md-total="{{numeroPersonas}}" md-on-paginate="getData" md-page-select></md-table-pagination>
+          </md-card>
 
-        <div class="separador2x"></div>
-        <md-button ng-click="agregarUsuario($event)" class="md-primary md-raised">Agregar</md-button>
-        <div class="separador2x"></div>
+          <div class="separador2x"></div>
+          <md-button ng-click="agregarUsuario($event)" class="md-primary md-raised">Agregar</md-button>
+          <div class="separador2x"></div>
+
+        </div>
+
+        <!-- Modal de Agregar Usuario -->
+        <div  style="visibility: hidden">
+          <div class="md-dialog-container" id="modalAgregarUsuario">
+            <md-dialog layout-padding style="min-width: 500px">
+              <h2 ng-if="user.idPersona">Editar Usuario</h2>
+              <h2 ng-if="!user.idPersona">Agregar Usuario</h2>
+              <div class="col-1-1">
+                <div class="col-1-3">
+                  <md-input-container class="md-block">
+                    <label>Nombre:</label>
+                    <input type="text" required pattern="[A-Za-zÁÉÍÓÚáéíóúü]+" ng-model="user.nombre">
+                  </md-input-container>
+                </div>
+                <div class="col-1-3">
+                  <md-input-container class="md-block">
+                    <label>Apellido paterno:</label>
+                    <input type="text" required pattern="[A-Za-zÁÉÍÓÚáéíóúü]+" ng-model="user.apPaterno">
+                  </md-input-container>
+                </div>
+                <div class="col-1-3">
+                  <md-input-container class="md-block">
+                    <label>Apellido materno:</label>
+                    <input type="text" required pattern="[A-Za-zÁÉÍÓÚáéíóúü]+" ng-model="user.apMaterno">
+                  </md-input-container>
+                </div>
+              </div>
+              <div class="col-1-1">
+                <div class="col-1-2">
+                  <md-input-container class="md-block">
+                    <label>Estado:</label>
+                    <md-select ng-model="user.municipio.estado.idEstado" ng-change="getMunicipios()">
+
+                      <md-option ng-repeat="estado in estados" ng-value="estado.idEstado">{{estado.estado}}</md-option>
+
+                    </md-select>
+                  </md-input-container>
+                </div>
+                <div class="col-1-2">
+                  <md-input-container class="md-block">
+                    <label>Municipio:</label>
+                    <md-select ng-model="user.municipio.idMunicipio">
+                      <md-option ng-repeat="municipio in municipios" ng-value="municipio.idMunicipio">{{municipio.municipio}}</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+              </div>
+
+              <div class="col-1-1">
+                <div class="col-1-2">
+                  <fieldset class="standard" style="border: 1px solid rgba(0,0,0,0.1);">
+                    <legend>Deporte</legend>
+                    <md-checkboX ng-repeat="deporte in deportes" ng-model="deporteTmp[deporte.idDeporte - 1]" ng-true-value="{{deporte.idDeporte}}"
+                                 style="visibility: visible; left: auto; opacity: 1; position:relative">
+                      {{deporte.deporte}}
+                    </md-checkbox>
+                  </fieldset>
+                </div>
+                <div class="col-1-2">
+                  <fieldset class="standard" style="border: 1px solid rgba(0,0,0,0.1);">
+                    <legend>Sexo</legend>
+                    <md-radio-group ng-model="user.sexo.idSexo">
+                      <md-radio-button ng-repeat="sexo in sexos" ng-value="sexo.idSexo">
+                        {{sexo.sexo}}
+                      </md-radio-button>
+
+                    </md-radio-group>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="col-1-1">
+                <md-button ng-if="!user.idPersona" ng-click="sendFormAddUser($event)" class="md-primary md-raised">Enviar</md-button>
+                <md-button ng-if="user.idPersona" ng-click="sendFormEditUser($event)" class="md-primary md-raised">Enviar</md-button>
+              </div>
+
+            </md-dialog>
+          </div>
+        </div>
+        <!-- / Modal de Agregar Usuario -->
 
       </div>
-
-      <!-- Modal de Agregar Usuario -->
-      <div  style="visibility: hidden">
-        <div class="md-dialog-container" id="modalAgregarUsuario">
-          <md-dialog layout-padding style="min-width: 500px">
-            <h2 ng-if="user.idPersona">Editar Usuario</h2>
-            <h2 ng-if="!user.idPersona">Agregar Usuario</h2>
-            <div class="col-1-1">
-              <div class="col-1-3">
-                <md-input-container class="md-block">
-                  <label>Nombre:</label>
-                  <input type="text" required pattern="[A-Za-zÁÉÍÓÚáéíóúü]+" ng-model="user.nombre">
-                </md-input-container>
-              </div>
-              <div class="col-1-3">
-                <md-input-container class="md-block">
-                  <label>Apellido paterno:</label>
-                  <input type="text" required pattern="[A-Za-zÁÉÍÓÚáéíóúü]+" ng-model="user.apPaterno">
-                </md-input-container>
-              </div>
-              <div class="col-1-3">
-                <md-input-container class="md-block">
-                  <label>Apellido materno:</label>
-                  <input type="text" required pattern="[A-Za-zÁÉÍÓÚáéíóúü]+" ng-model="user.apMaterno">
-                </md-input-container>
-              </div>
-            </div>
-            <div class="col-1-1">
-              <div class="col-1-2">
-                <md-input-container class="md-block">
-                  <label>Estado:</label>
-                  <md-select ng-model="user.municipio.estado.idEstado" ng-change="getMunicipios()">
-
-                    <md-option ng-repeat="estado in estados" ng-value="estado.idEstado">{{estado.estado}}</md-option>
-
-                  </md-select>
-                </md-input-container>
-              </div>
-              <div class="col-1-2">
-                <md-input-container class="md-block">
-                  <label>Municipio:</label>
-                  <md-select ng-model="user.municipio.idMunicipio">
-                    <md-option ng-repeat="municipio in municipios" ng-value="municipio.idMunicipio">{{municipio.municipio}}</md-option>
-                  </md-select>
-                </md-input-container>
-              </div>
-            </div>
-
-            <div class="col-1-1">
-              <div class="col-1-2">
-                <fieldset class="standard" style="border: 1px solid rgba(0,0,0,0.1);">
-                  <legend>Deporte</legend>
-                  <md-checkboX ng-repeat="deporte in deportes" ng-model="deporteTmp[deporte.idDeporte - 1]" ng-true-value="{{deporte.idDeporte}}"
-                    style="visibility: visible; left: auto; opacity: 1; position:relative">
-                    {{deporte.deporte}}
-                  </md-checkbox>
-                </fieldset>
-              </div>
-              <div class="col-1-2">
-                <fieldset class="standard" style="border: 1px solid rgba(0,0,0,0.1);">
-                  <legend>Sexo</legend>
-                  <md-radio-group ng-model="user.sexo.idSexo">
-                    <md-radio-button ng-repeat="sexo in sexos" ng-value="sexo.idSexo">
-                      {{sexo.sexo}}
-                    </md-radio-button>
-
-                  </md-radio-group>
-                </fieldset>
-              </div>
-            </div>
-            <div class="col-1-1">
-              <md-button ng-if="!user.idPersona" ng-click="sendFormAddUser($event)" class="md-primary md-raised">Enviar</md-button>
-              <md-button ng-if="user.idPersona" ng-click="sendFormEditUser($event)" class="md-primary md-raised">Enviar</md-button>
-            </div>
-
-          </md-dialog>
+      <footer>
+        <div class="separador3x"></div>
+        <div class="columnas">
+          <div class="columna6">
+            <h4>Instituto Politécnico Nacional</h4>
+            <h5>Escuela Superior de Cómputo</h5>
+          </div>
+          <div class="columna3">
+            <h6>Ingeniería de Software</h6>
+            <br>
+            <h6>2018-1</h6>
+            <br>
+            <h6>3CM2</h6>
+          </div>
+          <div class="columna3">
+            <p>
+              Formulario diseñado como ejercicio para el equipo de desarrollo del proyecto trabajado por el grupo 3CM2 en el semestre 2018-1
+            </p>
+          </div>
         </div>
-      </div>
-      <!-- / Modal de Agregar Usuario -->
-
-    </div>
-    <footer>
-      <div class="separador3x"></div>
-      <div class="columnas">
-        <div class="columna6">
-          <h4>Instituto Politécnico Nacional</h4>
-          <h5>Escuela Superior de Cómputo</h5>
-        </div>
-        <div class="columna3">
-          <h6>Ingeniería de Software</h6>
-          <br>
-          <h6>2018-1</h6>
-          <br>
-          <h6>3CM2</h6>
-        </div>
-        <div class="columna3">
-          <p>
-            Formulario diseñado como ejercicio para el equipo de desarrollo del proyecto trabajado por el grupo 3CM2 en el semestre 2018-1
-          </p>
-        </div>
-      </div>
-    </footer>
-  </main>
-</body>
+      </footer>
+    </main>
+  </body>
 
 </html>

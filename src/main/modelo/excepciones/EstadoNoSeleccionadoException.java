@@ -9,12 +9,13 @@ package main.modelo.excepciones;
  *
  * @author Uriel
  */
-public class EstadoNoSeleccionadoException extends Exception{
-   public EstadoNoSeleccionadoException() {
-    super();
-  }
-  
-  public EstadoNoSeleccionadoException(String mensajeError) {
-    super(mensajeError);
-  }
+public class EstadoNoSeleccionadoException extends Exception {
+
+		public EstadoNoSeleccionadoException() {
+				super();
+		}
+
+		public EstadoNoSeleccionadoException(String mensajeError) {
+				super(mensajeError);
+		}
 }

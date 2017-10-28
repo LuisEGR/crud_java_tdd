@@ -9,12 +9,13 @@ package main.modelo.excepciones;
  *
  * @author Luis
  */
-public class MunicipioNoSeleccionadoException  extends Exception{
-    public MunicipioNoSeleccionadoException() {
-    super();
-  }
-  
-  public MunicipioNoSeleccionadoException(String mensajeError) {
-    super(mensajeError);
-  }
+public class MunicipioNoSeleccionadoException extends Exception {
+
+		public MunicipioNoSeleccionadoException() {
+				super();
+		}
+
+		public MunicipioNoSeleccionadoException(String mensajeError) {
+				super(mensajeError);
+		}
 }

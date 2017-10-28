@@ -20,38 +20,38 @@ import static org.junit.Assert.*;
  * @author Luis
  */
 public class EstadosDaoTest {
-    
-    public EstadosDaoTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
-    /**
-     * Test of obtenerEstados method, of class EstadosDao.
-     */
-    @Test
-    public void testObtenerEstados() {
-        System.out.println("obtenerEstados");
-        EstadosDao instance = new EstadosDao();
-        ArrayList<Estado> expResult = null;
-        ArrayList<Estado> result = instance.obtenerEstados();
-        //assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
+		public EstadosDaoTest() {
+		}
+
+		@BeforeClass
+		public static void setUpClass() {
+		}
+
+		@AfterClass
+		public static void tearDownClass() {
+		}
+
+		@Before
+		public void setUp() {
+		}
+
+		@After
+		public void tearDown() {
+		}
+
+		/**
+		 * Test of obtenerEstados method, of class EstadosDao.
+		 */
+		@Test
+		public void testObtenerEstados() {
+				System.out.println("obtenerEstados");
+				EstadosDao instance = new EstadosDao();
+				ArrayList<Estado> expResult = null;
+				ArrayList<Estado> result = instance.obtenerEstados();
+				//assertEquals(expResult, result);
+				// TODO review the generated test code and remove the default call to fail.
+				//fail("The test case is a prototype.");
+		}
+
 }

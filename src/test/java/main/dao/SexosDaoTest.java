@@ -20,21 +20,19 @@ import static org.junit.Assert.*;
  * @author Luis
  */
 public class SexosDaoTest {
-    
 
+		/**
+		 * Test of obtenerSexos method, of class SexosDao.
+		 */
+		@Test
+		public void testObtenerSexos() {
+				System.out.println("obtenerSexos");
+				SexosDao instance = new SexosDao();
+				ArrayList<Sexo> expResult = null;
+				ArrayList<Sexo> result = instance.obtenerSexos();
+				//assertEquals(expResult, result);
+				// TODO review the generated test code and remove the default call to fail.
+				//fail("The test case is a prototype.");
+		}
 
-    /**
-     * Test of obtenerSexos method, of class SexosDao.
-     */
-    @Test
-    public void testObtenerSexos() {
-        System.out.println("obtenerSexos");
-        SexosDao instance = new SexosDao();
-        ArrayList<Sexo> expResult = null;
-        ArrayList<Sexo> result = instance.obtenerSexos();
-        //assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
 }

@@ -16,28 +16,27 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
 /**
  *
  * @author Luis
  */
 public class MunicipiosDaoTest {
-    
-     /**
-     * Test of obtenerMunicipios method, of class MunicipiosDao.
-     */
-    @Test
-    public void testObtenerMunicipios() {
-        System.out.println("obtenerMunicipios");
-        Estado estado = new Estado();
-        estado.setIdEstado(1);
-        MunicipiosDao instance = new MunicipiosDao();
-        ArrayList<Municipio> result = instance.obtenerMunicipios(estado);
-        
-        // El estado 1 tiene 11 municipios
-        assertEquals(11, result.size()); 
-        // El primer elemento es de clase Municipio
-        assertEquals(Municipio.class, result.get(1).getClass());
-    }
-    
+
+		/**
+		 * Test of obtenerMunicipios method, of class MunicipiosDao.
+		 */
+		@Test
+		public void testObtenerMunicipios() {
+				System.out.println("obtenerMunicipios");
+				Estado estado = new Estado();
+				estado.setIdEstado(1);
+				MunicipiosDao instance = new MunicipiosDao();
+				ArrayList<Municipio> result = instance.obtenerMunicipios(estado);
+
+				// El estado 1 tiene 11 municipios
+				assertEquals(11, result.size());
+				// El primer elemento es de clase Municipio
+				assertEquals(Municipio.class, result.get(1).getClass());
+		}
+
 }

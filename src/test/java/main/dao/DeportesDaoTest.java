@@ -20,18 +20,18 @@ import static org.junit.Assert.*;
  * @author Luis
  */
 public class DeportesDaoTest {
-    
-    /**
-     * Test of obtenerDeportes method, of class DeportesDao.
-     */
-    @Test
-    public void testObtenerDeportes() {
-        System.out.println("obtenerDeportes");
-        DeportesDao instance = new DeportesDao();
-        ArrayList<Deporte> result = instance.obtenerDeportes();
-        // El primer elemento es de tipo Deporte
-        assertEquals(Deporte.class, result.get(0).getClass());   
-        // Hay 12 deportes
-        assertEquals(12, result.size());
-    }    
+
+		/**
+		 * Test of obtenerDeportes method, of class DeportesDao.
+		 */
+		@Test
+		public void testObtenerDeportes() {
+				System.out.println("obtenerDeportes");
+				DeportesDao instance = new DeportesDao();
+				ArrayList<Deporte> result = instance.obtenerDeportes();
+				// El primer elemento es de tipo Deporte
+				assertEquals(Deporte.class, result.get(0).getClass());
+				// Hay 12 deportes
+				assertEquals(12, result.size());
+		}
 }

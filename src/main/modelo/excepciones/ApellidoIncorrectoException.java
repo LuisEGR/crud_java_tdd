@@ -10,11 +10,12 @@ package main.modelo.excepciones;
  * @author Paula
  */
 public class ApellidoIncorrectoException extends Exception {
-  public ApellidoIncorrectoException() {
-    super();
-  }
-  
-  public ApellidoIncorrectoException(String mensajeError) {
-    super(mensajeError);
-  }
+
+		public ApellidoIncorrectoException() {
+				super();
+		}
+
+		public ApellidoIncorrectoException(String mensajeError) {
+				super(mensajeError);
+		}
 }

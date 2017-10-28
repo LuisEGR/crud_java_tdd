@@ -9,12 +9,13 @@ package main.modelo.excepciones;
  *
  * @author Luis
  */
-public class NombreIncorrectoException extends Exception{
-     public NombreIncorrectoException() {
-    super();
-  }
-  
-  public NombreIncorrectoException(String mensajeError) {
-    super(mensajeError);
-  }
+public class NombreIncorrectoException extends Exception {
+
+		public NombreIncorrectoException() {
+				super();
+		}
+
+		public NombreIncorrectoException(String mensajeError) {
+				super(mensajeError);
+		}
 }

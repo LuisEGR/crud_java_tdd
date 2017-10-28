@@ -10,11 +10,12 @@ package main.modelo.excepciones;
  * @author Paula
  */
 public class CamposIncompletosException extends Exception {
-   public CamposIncompletosException() {
-    super();
-  }
-  
-  public CamposIncompletosException(String mensajeError) {
-    super(mensajeError);
-  }
- }
+
+		public CamposIncompletosException() {
+				super();
+		}
+
+		public CamposIncompletosException(String mensajeError) {
+				super(mensajeError);
+		}
+}

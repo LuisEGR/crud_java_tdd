@@ -9,12 +9,13 @@ package main.modelo.excepciones;
  *
  * @author Luis
  */
-public class DeportesVaciosException  extends Exception {
-     public DeportesVaciosException() {
-    super();
-  }
-  
-  public DeportesVaciosException(String mensajeError) {
-    super(mensajeError);
-  }
+public class DeportesVaciosException extends Exception {
+
+		public DeportesVaciosException() {
+				super();
+		}
+
+		public DeportesVaciosException(String mensajeError) {
+				super(mensajeError);
+		}
 }

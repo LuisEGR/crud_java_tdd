@@ -1,27 +1,27 @@
 [
-    {
-        "idEstado": 1,
-        "estado": "México",
-        "noPersonas": 100
-    },
-    {
-        "idEstado": 2,
-        "estado": "Jalisco",
-        "noPersonas": 50
-    },
-    {
-        "idEstado": 3,
-        "estado": "Tlaxcala",
-        "noPersonas": 1
-    },
-    {
-        "idEstado": 4,
-        "estado": "Yucatán",
-        "noPersonas": 20
-    },
-    {
-        "idEstado": 5,
-        "estado": "Durango",
-        "noPersonas": 5
-    }
+  {
+    "idEstado": 1,
+    "estado": "México",
+    "noPersonas": 100
+  },
+  {
+    "idEstado": 2,
+    "estado": "Jalisco",
+    "noPersonas": 50
+  },
+  {
+    "idEstado": 3,
+    "estado": "Tlaxcala",
+    "noPersonas": 1
+  },
+  {
+    "idEstado": 4,
+    "estado": "Yucatán",
+    "noPersonas": 20
+  },
+  {
+    "idEstado": 5,
+    "estado": "Durango",
+    "noPersonas": 5
+  }
 ]

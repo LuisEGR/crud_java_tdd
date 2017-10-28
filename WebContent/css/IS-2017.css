@@ -446,95 +446,95 @@ td, th {
 
 /*======================================Divisiones o columnas=====================================*/
 .columnas::after {
-    content: "";
-    clear: both;
-    display: table;
-    box-sizing: border-box
+  content: "";
+  clear: both;
+  display: table;
+  box-sizing: border-box
 }
 
 .columna12 {                /*Ocupa 12 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 99.6%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 99.6%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna11 {                /*Ocupa 11 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 91.2666%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 91.2666%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna10 {                /*Ocupa 10 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 82.9333%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 82.9333%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna9 {                /*Ocupa 9 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 74.6%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 74.6%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna8 {                /*Ocupa 8 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 66.2666%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 66.2666%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna7 {                /*Ocupa 7 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 57.9333%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 57.9333%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna6 {                /*Ocupa 6 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 49.6%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 49.6%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna5 {                /*Ocupa 5 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 41.2666%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 41.2666%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna4 {                /*Ocupa 4 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 32.9333%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 32.9333%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna3 {                /*Ocupa 3 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 24.6%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 24.6%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna2 {                /*Ocupa 2 espacios de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 16.2666%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 16.2666%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 .columna1 {                /*Ocupa 1 espacio de los 12 disponibles*/
-    float: left;
-    padding: 15px;
-    width: 7.9333%;
-    box-sizing: border-box;
-    margin: 1% 0.2%
+  float: left;
+  padding: 15px;
+  width: 7.9333%;
+  box-sizing: border-box;
+  margin: 1% 0.2%
 }
 
 

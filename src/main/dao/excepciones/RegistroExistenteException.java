@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package main.dao.excepciones;
 
 /**
@@ -11,12 +10,12 @@ package main.dao.excepciones;
  * @author Daniel Ayala Zamorano
  */
 public class RegistroExistenteException extends Exception {
-  
-  public RegistroExistenteException() {
-    super();
-  }
-  
-  public RegistroExistenteException(String mensajeError) {
-    super(mensajeError);
-  }
+
+		public RegistroExistenteException() {
+				super();
+		}
+
+		public RegistroExistenteException(String mensajeError) {
+				super(mensajeError);
+		}
 }

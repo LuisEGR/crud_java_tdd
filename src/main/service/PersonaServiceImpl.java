@@ -1,5 +1,4 @@
 /* Reemplazo de Crud.java */
-
 package main.service;
 
 import java.util.Arrays;
@@ -52,122 +51,116 @@ import main.utilidades.Par;
 
 import main.api.CrudService;
 
-
-
-
 /**
  * Servlet de ejercicio de Crud.
  *
- * <p>Clase controlador que liga las operaciones del usuario en las vistas (*.jsp y *.html) con las
- * clases internas del modelo.
+ * <p>
+ * Clase controlador que liga las operaciones del usuario en las vistas (*.jsp y
+ * *.html) con las clases internas del modelo.
  *
- * <p>Operaciones disponibles:
+ * <p>
+ * Operaciones disponibles:
  * <ol>
- *  <li>GET  /crud </li>
- *  <li>POST /crud/obtenerMunicipios </li>
- *  <li>POST /crud/colocarPersona </li>
- *  <li>POST /crud/actualizarPersona </li>
- *  <li>POST /crud/borrarPersona </li>
- *  <li>POST /crud/obtenerNumeroPersonas </li>
- *  <li>POST /crud/obtenerPersonas </li>
- *  <li>POST /crud/obtenerPersona </li>
+ * <li>GET /crud </li>
+ * <li>POST /crud/obtenerMunicipios </li>
+ * <li>POST /crud/colocarPersona </li>
+ * <li>POST /crud/actualizarPersona </li>
+ * <li>POST /crud/borrarPersona </li>
+ * <li>POST /crud/obtenerNumeroPersonas </li>
+ * <li>POST /crud/obtenerPersonas </li>
+ * <li>POST /crud/obtenerPersona </li>
  * </ol>
  *
- * <p>Cada una de estas operaciones se abstrae en un método privado distinto de esta clase. Para más
- * información sobre los propios métodos, ver los javadocs de cada método.
+ * <p>
+ * Cada una de estas operaciones se abstrae en un método privado distinto de
+ * esta clase. Para más información sobre los propios métodos, ver los javadocs
+ * de cada método.
  */
-
 @Path("/")
 @Consumes(MediaType.APPLICATION_JSON)
 
 public class PersonaServiceImpl implements CrudService {
 
-	@Context
-	private UriInfo uri;
+		@Context
+		private UriInfo uri;
 
-	/* ---- Book API ---- */
+		/* ---- Book API ---- */
 
-        /* DAOs */
-        private EstadosDaoI estadosDao;
-        private DeportesDaoI deportesDao;
-        private MunicipiosDaoI municipiosDao = new MunicipiosDao();
-        private PersonasDaoI personasDao;
-        private SexosDaoI sexosDao;
-       
-	@Override
-	@GET
-	@Path("/obtenerMunicipios/{id}")
-        @Produces(MediaType.APPLICATION_JSON)
-	public Response obtenerMunicipios(@PathParam("id") int idEstado) {
-            //return getMunicipios(idEstado);	
-            Response.ResponseBuilder responseBuilder = null;
-            
-            // Get lista de estados
-            Estado estado = new Estado();
-            estado.setIdEstado(idEstado);
-            ArrayList<Municipio> catalogoMunicipios = municipiosDao.obtenerMunicipios(estado);                       
-            responseBuilder = Response.ok(catalogoMunicipios, "application/json;charset=UTF-8");
-            
-            return responseBuilder.build();
-	}
+ /* DAOs */
+		private EstadosDaoI estadosDao;
+		private DeportesDaoI deportesDao;
+		private MunicipiosDaoI municipiosDao = new MunicipiosDao();
+		private PersonasDaoI personasDao;
+		private SexosDaoI sexosDao;
 
+		@Override
+		@GET
+		@Path("/obtenerMunicipios/{id}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response obtenerMunicipios(@PathParam("id") int idEstado) {
+				//return getMunicipios(idEstado);	
+				Response.ResponseBuilder responseBuilder = null;
 
-	
+				// Get lista de estados
+				Estado estado = new Estado();
+				estado.setIdEstado(idEstado);
+				ArrayList<Municipio> catalogoMunicipios = municipiosDao.obtenerMunicipios(estado);
+				responseBuilder = Response.ok(catalogoMunicipios, "application/json;charset=UTF-8");
 
+				return responseBuilder.build();
+		}
 
+		@Override
+		@POST
+		@Path("/colocarPersona")
+		@Produces(MediaType.APPLICATION_JSON)
+		@Consumes(MediaType.APPLICATION_JSON)
+		public Response colocarPersona(Persona persona) {
+				Response.ResponseBuilder responseBuilder = null;
+				//responseBuilder = Response.ok(persona, "application/json;charset=UTF-8");
+				//responseBuilder = Response.ok("Ok", "application/json;charset=UTF-8");
+				return responseBuilder.build();
+		}
 
-    @Override
-    @POST
-    @Path("/colocarPersona")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response colocarPersona(Persona persona) {
-        Response.ResponseBuilder responseBuilder = null;
-        //responseBuilder = Response.ok(persona, "application/json;charset=UTF-8");
-        //responseBuilder = Response.ok("Ok", "application/json;charset=UTF-8");
-        return responseBuilder.build();
-    }
+		@Override
+		@PUT
+		@Path("/crud/actualizarPersona")
+		@Produces(MediaType.APPLICATION_JSON)
+		@Consumes(MediaType.APPLICATION_JSON)
+		public Response actualizarPersona(Persona persona) {
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		}
 
-    @Override
-    @PUT
-    @Path("/crud/actualizarPersona")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response actualizarPersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+		@Override
+		@DELETE
+		@Path("/borrarPersona/{id}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response borrarPersona(@PathParam("id") int idUsuario) {
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		}
 
-    @Override
-    @DELETE
-    @Path("/borrarPersona/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response borrarPersona(@PathParam("id") int idUsuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+		@Override
+		@GET
+		@Path("/obtenerNumeroPersonas")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response obtenerNumeroPersonas() {
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		}
 
-    @Override
-    @GET
-    @Path("/obtenerNumeroPersonas")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerNumeroPersonas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    @Override
-    @GET
-    @Path("/obtenerPersonas")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerPersonas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+		@Override
+		@GET
+		@Path("/obtenerPersonas")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response obtenerPersonas() {
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		}
 
-    @Override
-    @GET
-    @Path("/obtenerPersona/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response obtenerPersona(@PathParam("id") int idUsuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+		@Override
+		@GET
+		@Path("/obtenerPersona/{id}")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response obtenerPersona(@PathParam("id") int idUsuario) {
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		}
 
 }

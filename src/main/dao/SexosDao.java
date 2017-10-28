@@ -5,7 +5,6 @@
  * Fecha de creación: 11/10/17.
  * vim: set softtabstop=2 shiftwidth=2 expandtab cc=100:
  */
-
 package main.dao;
 
 import main.datos.Sexo;
@@ -17,51 +16,48 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 public class SexosDao extends Dao implements SexosDaoI {
 
-  static final String TABLA = "Sexos";
+		static final String TABLA = "Sexos";
 
-  /**
-   * Constructor que crea la conexción con la Base de Datos (BD).
-   */
+		/**
+		 * Constructor que crea la conexción con la Base de Datos (BD).
+		 */
+		public SexosDao() {
+				super("Biblioteca_Personas", "ISCuenta", "Escom_17");
+		}
 
-  public SexosDao() {
-    super("Biblioteca_Personas", "ISCuenta", "Escom_17");
-  }
+		/**
+		 * Método para obtener todos los sexos del catálogo de la BD.
+		 *
+		 * @return arreglo de objetos tipo Sexo.
+		 *
+		 * @author
+		 */
+		@Override
+		public ArrayList<Sexo> obtenerSexos() {
+				ArrayList<Sexo> sexos = new ArrayList<Sexo>();
+				Sexo sexo;
+				String Consulta;
 
-  /**
-   * Método para obtener todos los sexos del catálogo de la BD.
-   * @return arreglo de objetos tipo Sexo.
-   *
-   * @author
-   */
+				try {
+						Consulta = "select * from Sexos";
+						PreparedStatement st = super.conexion.prepareStatement(Consulta);
+						ResultSet rs = st.executeQuery();
 
-  @Override
-  public ArrayList<Sexo> obtenerSexos() {
-    ArrayList<Sexo> sexos = new ArrayList<Sexo>();
-    Sexo sexo;
-    String Consulta;
-        
-        try {
-            Consulta="select * from Sexos";
-            PreparedStatement st = super.conexion.prepareStatement(Consulta);
-            ResultSet rs = st.executeQuery( );
-                                  
-            while (rs.next()) {
-                
-              sexo=new Sexo(rs.getInt("id_sexo"),(String) rs.getString("sexo"));
-                sexos.add(sexo);  
- 
-            }
-            rs.close();
-            st.close();
+						while (rs.next()) {
 
+								sexo = new Sexo(rs.getInt("id_sexo"), (String) rs.getString("sexo"));
+								sexos.add(sexo);
 
-        } catch (SQLException ex) {
-           ex.printStackTrace();
+						}
+						rs.close();
+						st.close();
 
-        }
-    return sexos;
-  }
+				} catch (SQLException ex) {
+						ex.printStackTrace();
+
+				}
+				return sexos;
+		}
 }
