@@ -105,7 +105,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 								+ "WHERE UPPER(nombre) like UPPER(?) "
 								+ "OR UPPER(apellido_paterno) like UPPER(?) "
 								+ "OR UPPER(apellido_materno) like UPPER(?) "
-								+ "ORDER BY apellido_paterno LIMIT ?,?";
+								+ "ORDER BY apellido_paterno LIMIT ? OFFSET ?";
 
 				String sql2 = "SELECT COUNT(id_persona) AS C "
 								+ "FROM View_Personas_Info "
@@ -119,8 +119,8 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 						ps.setString(1, query);
 						ps.setString(2, query);
 						ps.setString(3, query);
-						ps.setInt(4, min);
-						ps.setInt(5, max);
+						ps.setInt(4, max - min + 1);
+						ps.setInt(5, min - 1);
 						ResultSet rs1 = ps.executeQuery();
 						while (rs1.next()) {
 								persona = new Persona();
