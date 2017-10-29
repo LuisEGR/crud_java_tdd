@@ -8,17 +8,16 @@ package test.java.main.dao;
 import java.util.ArrayList;
 import main.dao.SexosDao;
 import main.datos.Sexo;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  *
  * @author Luis
  */
+@DisplayName("Test DAO - Sexos")
 public class SexosDaoTest {
 
 		/**

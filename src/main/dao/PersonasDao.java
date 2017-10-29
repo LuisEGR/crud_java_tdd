@@ -41,6 +41,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 		 * @return true si se eliminó el registro de la BD, false de lo contrario.
 		 *
 		 * @author Daniel Ayala Zamorano
+		 *				 Luis Enrique González Rodríguez
 		 */
 		@Override
 		public void borrarPersona(Persona persona) {
@@ -53,7 +54,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 						ps.setInt(1, id);
 						result = ps.execute();
 				} catch (SQLException e) {
-						System.out.println(e.getMessage());
+						System.out.println("borrarPersona - MySQL Error:" + e.getMessage());
 				}
 		}
 
@@ -76,7 +77,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 						rs.next();
 						numeroPersonas = rs.getInt("num");
 				} catch (SQLException e) {
-						System.out.println(e.getMessage());
+						System.out.println("obtenerNumeroPersonas - MySQL Error:" + e.getMessage());
 				}
 				return numeroPersonas;
 		}
@@ -104,7 +105,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 								+ "WHERE UPPER(nombre) like UPPER(?) "
 								+ "OR UPPER(apellido_paterno) like UPPER(?) "
 								+ "OR UPPER(apellido_materno) like UPPER(?) "
-								+ "ORDER BY apellido_paterno LIMIT ? OFFSET ? ";
+								+ "ORDER BY apellido_paterno LIMIT ?,?";
 
 				String sql2 = "SELECT COUNT(id_persona) AS C "
 								+ "FROM View_Personas_Info "
@@ -118,8 +119,8 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 						ps.setString(1, query);
 						ps.setString(2, query);
 						ps.setString(3, query);
-						ps.setInt(4, max - min + 1);
-						ps.setInt(5, min - 1);
+						ps.setInt(4, min);
+						ps.setInt(5, max);
 						ResultSet rs1 = ps.executeQuery();
 						while (rs1.next()) {
 								persona = new Persona();
@@ -142,7 +143,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 						rs2.next();
 						count = rs2.getInt("C");
 				} catch (SQLException e) {
-						System.out.println(e.getMessage());
+						System.out.println("obtenerPersonas - MySQL Error:" + e.getMessage());
 				}
 				return new Par(count, personas);
 		}
@@ -216,7 +217,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 						}
 						persona = new Persona(id, nombre, apPaterno, apMaterno, sexo, municipio, deportes);
 				} catch (Exception e) {
-						System.out.println(e.getMessage());
+						System.out.println("obtenerPersona - MySQL Error:" + e.getMessage());
 				}
 				return persona;
 		}
@@ -299,7 +300,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 								ps.execute();
 						}
 				} catch (Exception e) {
-						System.out.println(e.getMessage());
+						System.out.println("actualizarPersona - MySQL Error:" + e.getMessage());
 				}
 		}
 
@@ -331,7 +332,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 								}
 						}
 				} catch (Exception e) {
-						System.out.println(e.getMessage());
+						System.out.println("obtenerEstadisticasEstados - MySQL Error:" + e.getMessage());
 				}
 				Estado e = new Estado();
 				return lista;
@@ -369,7 +370,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 								}
 						}
 				} catch (Exception e) {
-						System.out.println(e.getMessage());
+						System.out.println("obtenerEstadisticasMunicipios - MySQL Error:" + e.getMessage());
 				}
 				return lista;
 		}
@@ -401,7 +402,7 @@ public class PersonasDao extends Dao implements PersonasDaoI {
 								}
 						}
 				} catch (Exception e) {
-						System.out.println(e.getMessage());
+						System.out.println("obtenerEstadisticasSexos - MySQL Error:" + e.getMessage());
 				}
 				return lista;
 		}

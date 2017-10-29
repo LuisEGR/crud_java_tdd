@@ -5,20 +5,21 @@
  */
 package test.java.main.dao;
 
+
 import java.util.ArrayList;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import main.dao.DeportesDao;
 import main.datos.Deporte;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author Luis
  */
+@DisplayName("Test DAO - Deportes")
 public class DeportesDaoTest {
 
 		/**
@@ -26,12 +27,11 @@ public class DeportesDaoTest {
 		 */
 		@Test
 		public void testObtenerDeportes() {
-				System.out.println("obtenerDeportes");
 				DeportesDao instance = new DeportesDao();
 				ArrayList<Deporte> result = instance.obtenerDeportes();
 				// El primer elemento es de tipo Deporte
-				assertEquals(Deporte.class, result.get(0).getClass());
+				assertEquals(Deporte.class, result.get(0).getClass(), "El primer elemento debería ser de tipo Deporte");
 				// Hay 12 deportes
-				assertEquals(12, result.size());
+				assertEquals(12, result.size(), "El arreglo debería contener 12 elementos");
 		}
 }
