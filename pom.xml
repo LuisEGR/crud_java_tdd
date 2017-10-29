@@ -15,10 +15,12 @@
   <artifactId>CrudREST</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-
+    
   <!-- Plugins para la construcción ============================================================-->
-
+  
   <build>
+    
+   
     
     <!-- Sobreescritura de propiedades del súper POM -->
     <sourceDirectory>src</sourceDirectory>
@@ -53,12 +55,15 @@
         </configuration>
       </plugin>
       
+            
       <!-- 
           Exec maven plugin
           Permite ejecutar comándos en distintas fases de la construcción:
-          * exec-nom-install: ejecuta «npm install» en la carpeta WebModules/
+          * exec-nom-install: ejecuta «npm install» en la carpeta WebContent/
       -->
       
+      
+     
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
@@ -67,9 +72,9 @@
           <execution>
             <id>exec-npm-install</id>
             <phase>generate-sources</phase>
-            <configuration>
+            <configuration>             
               <workingDirectory>WebContent</workingDirectory>
-              <executable>npm</executable>
+              <executable>${npm.executable}</executable>
               <arguments>
                 <argument>install</argument>
               </arguments>
@@ -80,8 +85,32 @@
           </execution>
         </executions>
       </plugin>
+      
+     
     </plugins>
   </build>
+
+ 
+  <profiles>
+    <!-- 
+       Windows Profile
+       Cambia el valor por defecto de los ejecutables para hacerlo compatible con windows
+       npm -> npm.cmd
+    -->
+    <profile>
+          <id>platform-windows</id>
+          <activation>
+              <os>
+                  <family>windows</family>
+              </os>
+          </activation>
+          <properties>
+              <!-- Override the executable names for Windows -->
+              <npm.executable>npm.cmd</npm.executable>
+              <grunt.executable>grunt.cmd</grunt.executable>
+          </properties>
+      </profile>
+  </profiles>
 
   <!-- Dependencias ============================================================================-->
   <dependencies>
@@ -147,6 +176,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <npm.executable>npm</npm.executable>
   </properties>
 
 </project>
