@@ -18,8 +18,8 @@ crudExample.controller("crudController", ['$scope', 'CRUD_API', '$mdDialog', fun
     var max = $scope.query.page * $scope.query.limit;
 
     CRUD_API.getUsersRange(min, max).then(function (res) {
-      $scope.users = res.data.personas;
-      $scope.numeroPersonas = res.data.resultados;
+      $scope.users = res.data.segundo;
+      $scope.numeroPersonas = res.data.primero;
     });
 
     CRUD_API.getEstados().then(function (usrs) {
@@ -40,8 +40,8 @@ crudExample.controller("crudController", ['$scope', 'CRUD_API', '$mdDialog', fun
       var min = (page - 1) * limit + 1;
       var max = page * limit;
       $scope.promise = CRUD_API.getUsersRange(min, max, $scope.search).then(function (res) {
-        $scope.users = res.data.personas;
-        $scope.numeroPersonas = res.data.resultados;
+        $scope.users = res.data.segundo;
+        $scope.numeroPersonas = res.data.primero;
       });
     };
 

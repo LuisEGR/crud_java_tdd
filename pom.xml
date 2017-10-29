@@ -98,6 +98,8 @@
       <artifactId>asm</artifactId>
       <version>3.3.1</version>
     </dependency>
+    
+    <!-- Dependencias de Jersey -->
     <dependency>
       <groupId>com.sun.jersey</groupId>
       <artifactId>jersey-bundle</artifactId>
@@ -113,6 +115,7 @@
       <artifactId>jersey-core</artifactId>
       <version>1.19</version>
     </dependency>
+    
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
@@ -124,9 +127,9 @@
       <version>1.8</version>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.jackson</groupId>
-      <artifactId>jackson-core-asl</artifactId>
-      <version>1.9.9</version>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.9.2</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

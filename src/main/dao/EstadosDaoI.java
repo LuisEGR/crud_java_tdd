@@ -9,7 +9,7 @@ package main.dao;
 
 import main.datos.Estado;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Interfaz de EstadosDao.
@@ -26,7 +26,7 @@ public interface EstadosDaoI {
 		 *
 		 * @return ArrayList de objetos tipo Estado.
 		 */
-		public List<Estado> obtenerEstados();
+		public ArrayList<Estado> obtenerEstados();
 
 		/**
 		 * Termina conexión con BD.

@@ -18,6 +18,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.EntityTag;
@@ -55,8 +56,8 @@ import main.api.CrudService;
  * Servlet de ejercicio de Crud.
  *
  * <p>
- * Clase controlador que liga las operaciones del usuario en las vistas (*.jsp y
- * *.html) con las clases internas del modelo.
+ * Clase controlador que liga las operaciones del usuario en las vistas (*.jsp y *.html) con las
+ * clases internas del modelo.
  *
  * <p>
  * Operaciones disponibles:
@@ -72,95 +73,186 @@ import main.api.CrudService;
  * </ol>
  *
  * <p>
- * Cada una de estas operaciones se abstrae en un método privado distinto de
- * esta clase. Para más información sobre los propios métodos, ver los javadocs
- * de cada método.
+ * Cada una de estas operaciones se abstrae en un método privado distinto de esta clase. Para más
+ * información sobre los propios métodos, ver los javadocs de cada método.
  */
 @Path("/")
 @Consumes(MediaType.APPLICATION_JSON)
 
 public class PersonaServiceImpl implements CrudService {
 
-		@Context
-		private UriInfo uri;
+  @Context
+  private UriInfo uri;
 
-		/* ---- Book API ---- */
+  /* DAOs */
+  private final EstadosDaoI estadosDao = new EstadosDao();
+  private final DeportesDaoI deportesDao = new DeportesDao();
+  private final MunicipiosDaoI municipiosDao = new MunicipiosDao();
+  private final PersonasDaoI personasDao = new PersonasDao();
+  private final SexosDaoI sexosDao = new SexosDao();
+  
+  @Override
+  public void finalize() {
+    estadosDao.cerrarConexion();
+    deportesDao.cerrarConexion();
+    municipiosDao.cerrarConexion();
+    personasDao.cerrarConexion();
+    sexosDao.cerrarConexion();
+  }
 
- /* DAOs */
-		private EstadosDaoI estadosDao;
-		private DeportesDaoI deportesDao;
-		private MunicipiosDaoI municipiosDao = new MunicipiosDao();
-		private PersonasDaoI personasDao;
-		private SexosDaoI sexosDao;
+  @Override
+  @GET
+  @Path("/obtenerEstados")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response obtenerEstados() {
+    
+    Response.ResponseBuilder responseBuilder = null;
+    ArrayList<Estado> catalogoEstados = estadosDao.obtenerEstados();
+    responseBuilder = Response.ok(catalogoEstados, "application/json;charset=UTF-8");
+    return responseBuilder.build();
+    
+  }
+  
+  @Override
+  @GET
+  @Path("/obtenerSexos")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response obtenerSexos() {
+    
+    Response.ResponseBuilder responseBuilder = null;
+    ArrayList<Sexo> catalogoSexos = sexosDao.obtenerSexos();
+    responseBuilder = Response.ok(catalogoSexos, "application/json;charset=UTF-8");
+    return responseBuilder.build();
+    
+  }
+  
+  @Override
+  @GET
+  @Path("/obtenerDeportes")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response obtenerDeportes() {
+    
+    Response.ResponseBuilder responseBuilder = null;
+    ArrayList<Deporte> catalogoDeportes = deportesDao.obtenerDeportes();
+    responseBuilder = Response.ok(catalogoDeportes, "application/json;charset=UTF-8");
+    return responseBuilder.build();
+    
+  }
+  
+  @Override
+  @GET
+  @Path("/obtenerMunicipios/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response obtenerMunicipios(@PathParam("id") int idEstado) {
+    	
+    Response.ResponseBuilder responseBuilder = null;
+    Estado estado = new Estado();
+    estado.setIdEstado(idEstado);
+    ArrayList<Municipio> catalogoMunicipios = municipiosDao.obtenerMunicipios(estado);
+    responseBuilder = Response.ok(catalogoMunicipios, "application/json;charset=UTF-8");
+    return responseBuilder.build();
+    
+  }
 
-		@Override
-		@GET
-		@Path("/obtenerMunicipios/{id}")
-		@Produces(MediaType.APPLICATION_JSON)
-		public Response obtenerMunicipios(@PathParam("id") int idEstado) {
-				//return getMunicipios(idEstado);	
-				Response.ResponseBuilder responseBuilder = null;
+  @Override
+  @PUT
+  @Path("/colocarPersona")
+  @Produces(MediaType.TEXT_PLAIN)
+  @Consumes(MediaType.APPLICATION_JSON)
+  public Response colocarPersona(Persona persona) {
+    System.out.println("DEBUG: " + persona);
+    Response.ResponseBuilder responseBuilder = null;
+    int codigo;
+    try {
+      Validaciones.validarPersona(persona);
+      personasDao.insertarPersona(persona);
+      codigo = 1;
+    } catch (NombreIncorrectoException e) {
+      codigo = 2;
+    } catch (ApellidoIncorrectoException e) {
+      codigo = 3;
+    } catch (CamposIncompletosException e) {
+      codigo = 4;
+    } catch (RegistroExistenteException e) {
+      codigo = 5;
+    } catch (DeportesVaciosException e) {
+      codigo = 4;
+    } catch (Exception e) {
+      codigo = 6;
+    }
+    responseBuilder = Response.ok("" + codigo, "text/plain;charset=UTF-8");
+    return responseBuilder.build();
+  }
 
-				// Get lista de estados
-				Estado estado = new Estado();
-				estado.setIdEstado(idEstado);
-				ArrayList<Municipio> catalogoMunicipios = municipiosDao.obtenerMunicipios(estado);
-				responseBuilder = Response.ok(catalogoMunicipios, "application/json;charset=UTF-8");
+  @Override
+  @POST
+  @Path("/actualizarPersona")
+  @Produces(MediaType.TEXT_PLAIN)
+  @Consumes(MediaType.APPLICATION_JSON)
+  public Response actualizarPersona(Persona persona) {
+    Response.ResponseBuilder responseBuilder;
+    int codigo;
+    try {
+      Validaciones.validarPersona(persona);
+      personasDao.actualizarPersona(persona);
+      codigo = 1;
+    } catch (NombreIncorrectoException e) {
+      codigo = 2;
+    } catch (ApellidoIncorrectoException e) {
+      codigo = 3;
+    } catch (CamposIncompletosException e) {
+      codigo = 4;
+    } catch (DeportesVaciosException e) {
+      codigo = 4;
+    } catch (Exception e) {
+      codigo = 6;
+    }
+    responseBuilder = Response.ok("" + codigo, "text/plain;charset=UTF-8");
+    return responseBuilder.build();
+  }
 
-				return responseBuilder.build();
-		}
+  @Override
+  @DELETE
+  @Path("/borrarPersona/{id}")
+  @Produces(MediaType.TEXT_PLAIN)
+  public Response borrarPersona(@PathParam("id") int idUsuario) {
+    
+    Response.ResponseBuilder responseBuilder = null;
+    Persona persona = new Persona();
+    persona.setIdPersona(idUsuario);
+    personasDao.borrarPersona(persona);
+    responseBuilder = Response.ok("Borrado exitoso", "text/plain;charset=UTF-8");
+    return responseBuilder.build();
+    
+  }
 
-		@Override
-		@POST
-		@Path("/colocarPersona")
-		@Produces(MediaType.APPLICATION_JSON)
-		@Consumes(MediaType.APPLICATION_JSON)
-		public Response colocarPersona(Persona persona) {
-				Response.ResponseBuilder responseBuilder = null;
-				//responseBuilder = Response.ok(persona, "application/json;charset=UTF-8");
-				//responseBuilder = Response.ok("Ok", "application/json;charset=UTF-8");
-				return responseBuilder.build();
-		}
+  @Override
+  @GET
+  @Path("/obtenerPersonas/{min}/{max}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response obtenerPersonas(@PathParam("min") int minimo, 
+      @PathParam("max") int maximo, @QueryParam("query") String consulta) {
+    
+    consulta = (consulta == null) ? "" : consulta;
+    Response.ResponseBuilder responseBuilder = null;
+    Par<Integer, ArrayList<Persona>> personas
+        = personasDao.obtenerPersonas(minimo, maximo, consulta);
+    responseBuilder = Response.ok(personas, "application/json;charset=UTF-8");
+    return responseBuilder.build();
+    
+  }
 
-		@Override
-		@PUT
-		@Path("/crud/actualizarPersona")
-		@Produces(MediaType.APPLICATION_JSON)
-		@Consumes(MediaType.APPLICATION_JSON)
-		public Response actualizarPersona(Persona persona) {
-				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-		}
-
-		@Override
-		@DELETE
-		@Path("/borrarPersona/{id}")
-		@Produces(MediaType.APPLICATION_JSON)
-		public Response borrarPersona(@PathParam("id") int idUsuario) {
-				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-		}
-
-		@Override
-		@GET
-		@Path("/obtenerNumeroPersonas")
-		@Produces(MediaType.APPLICATION_JSON)
-		public Response obtenerNumeroPersonas() {
-				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-		}
-
-		@Override
-		@GET
-		@Path("/obtenerPersonas")
-		@Produces(MediaType.APPLICATION_JSON)
-		public Response obtenerPersonas() {
-				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-		}
-
-		@Override
-		@GET
-		@Path("/obtenerPersona/{id}")
-		@Produces(MediaType.APPLICATION_JSON)
-		public Response obtenerPersona(@PathParam("id") int idUsuario) {
-				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-		}
+  @Override
+  @GET
+  @Path("/obtenerPersona/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response obtenerPersona(@PathParam("id") int idUsuario) {
+    
+    Response.ResponseBuilder responseBuilder = null;
+    Persona persona = personasDao.obtenerPersona(idUsuario);
+    responseBuilder = Response.ok(persona, "application/json;charset=UTF-8");
+    return responseBuilder.build();
+    
+  }
 
 }

@@ -13,18 +13,22 @@ import main.datos.Persona;
  */
 public interface CrudService {
 
-		public Response obtenerMunicipios(int idEstado);
+  public Response obtenerEstados();
+  
+  public Response obtenerDeportes();
+  
+  public Response obtenerSexos();
 
-		public Response colocarPersona(Persona persona);
+  public Response obtenerMunicipios(int idEstado);
 
-		public Response actualizarPersona(Persona persona);
+  public Response colocarPersona(Persona persona);
 
-		public Response borrarPersona(int idUsuario);
+  public Response actualizarPersona(Persona persona);
 
-		public Response obtenerNumeroPersonas();
+  public Response borrarPersona(int idUsuario);
 
-		public Response obtenerPersonas();
+  public Response obtenerPersonas(int minimo, int maximo, String consulta);
 
-		public Response obtenerPersona(int idUsuario);
+  public Response obtenerPersona(int idUsuario);
 
 }
