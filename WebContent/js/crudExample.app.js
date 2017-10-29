@@ -1,5 +1,7 @@
 var crudExample = angular.module("EjemploCRUD", ['ngMaterial', 'md.data.table', 'ngMdIcons'])
-
+.config(['$mdAriaProvider', function ($mdAriaProvider) {
+  $mdAriaProvider.disableWarnings();
+}])
   .service("GLOBALS", function () {
     return {
       URL_API: "/crud/api"
