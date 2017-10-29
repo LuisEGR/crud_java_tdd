@@ -69,7 +69,7 @@ public class PersonasDaoTest {
 		 */
 		@Test
 		public void testObtenerPersonas() {
-				int min = 0;
+				int min = 1;
 				int max = 10;
 				String q = "";
 				Par result = personasDao.obtenerPersonas(min, max, q);
