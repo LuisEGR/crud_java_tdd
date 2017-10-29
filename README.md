@@ -1,5 +1,5 @@
 # CRUD - RESTFul
-[![Build Status](https://travis-ci.com/LuisEGR/crud_java_tdd.svg?token=akpzpzvQ2pdKfMYRzfGn&branch=master)](https://travis-ci.com/LuisEGR/crud_java_tdd)
+[![Build Status](https://travis-ci.org/LuisEGR/crud_java_tdd.svg?branch=master)](https://travis-ci.org/LuisEGR/crud_java_tdd)
 
 ---
 Ejemplo de CRUD en JAVA usando TDD con Travis CI 
@@ -26,86 +26,6 @@ Respuesta:
         },
         "idMunicipio": 1,
         "municipio": "Aguascalientes"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 2,
-        "municipio": "San Francisco de los Romo"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 3,
-        "municipio": "El Llano"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 4,
-        "municipio": "Rincón de Romos"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 5,
-        "municipio": "Cosío"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 6,
-        "municipio": "San José de Gracia"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 7,
-        "municipio": "Tepezalá"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 8,
-        "municipio": "Pabellón de Arteaga"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 9,
-        "municipio": "Asientos"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 10,
-        "municipio": "Calvillo"
-    },
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 11,
-        "municipio": "Jesús María"
     }
 ]
 ````
