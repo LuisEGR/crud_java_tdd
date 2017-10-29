@@ -8,36 +8,19 @@ package test.java.main.dao;
 import java.util.ArrayList;
 import main.dao.EstadosDao;
 import main.datos.Estado;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  *
  * @author Luis
  */
+@DisplayName("Test DAO - Estados")
 public class EstadosDaoTest {
 
 		public EstadosDaoTest() {
-		}
-
-		@BeforeClass
-		public static void setUpClass() {
-		}
-
-		@AfterClass
-		public static void tearDownClass() {
-		}
-
-		@Before
-		public void setUp() {
-		}
-
-		@After
-		public void tearDown() {
 		}
 
 		/**
@@ -45,13 +28,12 @@ public class EstadosDaoTest {
 		 */
 		@Test
 		public void testObtenerEstados() {
-				System.out.println("obtenerEstados");
 				EstadosDao instance = new EstadosDao();
-				ArrayList<Estado> expResult = null;
 				ArrayList<Estado> result = instance.obtenerEstados();
-				//assertEquals(expResult, result);
-				// TODO review the generated test code and remove the default call to fail.
-				//fail("The test case is a prototype.");
+				// El primer elemento es de tipo Estado
+				assertEquals(Estado.class, result.get(0).getClass(), "El primer elemento debería ser de tipo Estado");
+				// Hay 32 Estados
+				assertEquals(32, result.size(), "El arreglo debería contener 32 elementos");
 		}
 
 }
