@@ -79,7 +79,7 @@ import main.api.CrudService;
 @Path("/")
 @Consumes(MediaType.APPLICATION_JSON)
 
-public class PersonaServiceImpl implements CrudService {
+public class CrudServiceImpl implements CrudService {
 
   @Context
   private UriInfo uri;
