@@ -1,0 +1,38 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API de operaciones definidas en el servlet del ejercicio del CRUD.",
+    "version" : "1.0.0",
+    "title" : "Ejercicio de CRUD"
+  },
+  "paths" : {
+    "/obtenerEstados" : {
+      "get" : {
+        "summary" : "Regresa el catálogo de estados.",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Operación correcta."
+          }
+        }
+      }
+    },
+    "/obtenerMunicipios/{id}" : {
+      "get" : {
+        "summary" : "Regresa el catálogo de municipios del estado dado.",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id del estado del que se desean los municipios.",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Operación correcta."
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { }
+}
