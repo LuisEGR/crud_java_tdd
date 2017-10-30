@@ -1,36 +1,27 @@
-# CRUD - RESTFul
-[![Build Status](https://travis-ci.org/LuisEGR/crud_java_tdd.svg?branch=master)](https://travis-ci.org/LuisEGR/crud_java_tdd)
+# CRUD - RESTFul 
+[![Build Status](https://travis-ci.org/LuisEGR/crud_java_tdd.svg?branch=master)](https://travis-ci.org/LuisEGR/crud_java_tdd) :octocat: 
 
 ---
 Ejemplo de CRUD en JAVA usando TDD con Travis CI 
 
 
 
-### /crud/obtenerMunicipios/{id_estado}
+Métodos disponibles:
+- :heavy_check_mark: **POST** `colocarPersona` : Agregar una persona nueva
+- :heavy_check_mark: **GET** `obtenerPersonas` : Obtener un arreglo de personas
+- :heavy_check_mark: **PUT** `actualizarPersona` : Actualizar información de una persona
+- :heavy_check_mark: **DELETE** `borrarPersona` : Eliminar una persona
+- :heavy_check_mark: **GET** `obtenerEstados` : Obtener todos los estados registrados
+- :heavy_check_mark: **GET** `obtenerMunicipios`: Obtener todos los municipios de un estado
+- :heavy_check_mark: **GET** `obtenerDeportes`: Obtener todos los deportes registrados
+- :heavy_check_mark: **GET** `obtenerSexos`: Obtener todos los sexos registrados
 
-> Retorna los municipios que están dentro de ese estado.
-
-Ejemplo:
-
-> GET  
-> http://localhost:8084/crud/obtenerMunicipios/1
-
-Respuesta:
-
-````json
-[
-    {
-        "estado": {
-            "estado": null,
-            "idEstado": 1
-        },
-        "idMunicipio": 1,
-        "municipio": "Aguascalientes"
-    }
-]
-````
+Documentación completa con API Blueprint:
+[https://luisegr.github.io/crud_java_tdd/](https://luisegr.github.io/crud_java_tdd/)
 
 
+----
+----
 Aplicaciones / Librerias / Framerowks utilizados:
 
 - [NetBeans IDE](https://netbeans.org/) 
@@ -39,7 +30,7 @@ Aplicaciones / Librerias / Framerowks utilizados:
 - [Jersey - RESTful Web Services in Java](https://jersey.github.io/) 
 - [mysql-connector-java](https://mvnrepository.com/artifact/mysql/mysql-connector-java) 
 - [Jackson formerly known as the standard JSON library for Java](https://github.com/FasterXML/jackson) 
-- [JUnit - programmer-friendly testing framework for Java 8](http://junit.org/)
+- [JUnit5 - programmer-friendly testing framework for Java 8](http://junit.org/)
 
 
 [![Travis CI](https://workablehr.s3.amazonaws.com/uploads/account/logo/11901/large_Mascot-fullcolor-png.png)](https://travis-ci.org/)
