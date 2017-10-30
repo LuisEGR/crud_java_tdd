@@ -90,7 +90,7 @@ public class CrudServiceImpl implements CrudService {
   private final MunicipiosDaoI municipiosDao = new MunicipiosDao();
   private final PersonasDaoI personasDao = new PersonasDao();
   private final SexosDaoI sexosDao = new SexosDao();
-  
+
   @Override
   public void finalize() {
     estadosDao.cerrarConexion();
@@ -105,57 +105,86 @@ public class CrudServiceImpl implements CrudService {
   @Path("/obtenerEstados")
   @Produces(MediaType.APPLICATION_JSON)
   public Response obtenerEstados() {
-    
+
     Response.ResponseBuilder responseBuilder = null;
     ArrayList<Estado> catalogoEstados = estadosDao.obtenerEstados();
     responseBuilder = Response.ok(catalogoEstados, "application/json;charset=UTF-8");
     return responseBuilder.build();
-    
+
   }
-  
+
   @Override
   @GET
   @Path("/obtenerSexos")
   @Produces(MediaType.APPLICATION_JSON)
   public Response obtenerSexos() {
-    
+
     Response.ResponseBuilder responseBuilder = null;
     ArrayList<Sexo> catalogoSexos = sexosDao.obtenerSexos();
     responseBuilder = Response.ok(catalogoSexos, "application/json;charset=UTF-8");
     return responseBuilder.build();
-    
+
   }
-  
+
   @Override
   @GET
   @Path("/obtenerDeportes")
   @Produces(MediaType.APPLICATION_JSON)
   public Response obtenerDeportes() {
-    
+
     Response.ResponseBuilder responseBuilder = null;
     ArrayList<Deporte> catalogoDeportes = deportesDao.obtenerDeportes();
     responseBuilder = Response.ok(catalogoDeportes, "application/json;charset=UTF-8");
     return responseBuilder.build();
-    
+
   }
-  
+
   @Override
   @GET
   @Path("/obtenerMunicipios/{id}")
   @Produces(MediaType.APPLICATION_JSON)
   public Response obtenerMunicipios(@PathParam("id") int idEstado) {
-    	
+
     Response.ResponseBuilder responseBuilder = null;
     Estado estado = new Estado();
     estado.setIdEstado(idEstado);
     ArrayList<Municipio> catalogoMunicipios = municipiosDao.obtenerMunicipios(estado);
     responseBuilder = Response.ok(catalogoMunicipios, "application/json;charset=UTF-8");
     return responseBuilder.build();
-    
+
   }
 
   @Override
-  @PUT
+  @GET
+  @Path("/obtenerPersonas/{min}/{max}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response obtenerPersonas(@PathParam("min") int minimo,
+      @PathParam("max") int maximo, @QueryParam("query") String consulta) {
+
+    consulta = (consulta == null) ? "" : consulta;
+    Response.ResponseBuilder responseBuilder = null;
+    Par<Integer, ArrayList<Persona>> personas
+        = personasDao.obtenerPersonas(minimo, maximo, consulta);
+    responseBuilder = Response.ok(personas, "application/json;charset=UTF-8");
+    return responseBuilder.build();
+
+  }
+
+  @Override
+  @GET
+  @Path("/obtenerPersona/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response obtenerPersona(@PathParam("id") int idUsuario) {
+
+    Response.ResponseBuilder responseBuilder = null;
+    Persona persona = personasDao.obtenerPersona(idUsuario);
+    responseBuilder = Response.ok(persona, "application/json;charset=UTF-8");
+    return responseBuilder.build();
+
+  }
+
+  @Override
+  @POST
   @Path("/colocarPersona")
   @Produces(MediaType.TEXT_PLAIN)
   @Consumes(MediaType.APPLICATION_JSON)
@@ -185,7 +214,7 @@ public class CrudServiceImpl implements CrudService {
   }
 
   @Override
-  @POST
+  @PUT
   @Path("/actualizarPersona")
   @Produces(MediaType.TEXT_PLAIN)
   @Consumes(MediaType.APPLICATION_JSON)
@@ -216,43 +245,14 @@ public class CrudServiceImpl implements CrudService {
   @Path("/borrarPersona/{id}")
   @Produces(MediaType.TEXT_PLAIN)
   public Response borrarPersona(@PathParam("id") int idUsuario) {
-    
+
     Response.ResponseBuilder responseBuilder = null;
     Persona persona = new Persona();
     persona.setIdPersona(idUsuario);
     personasDao.borrarPersona(persona);
     responseBuilder = Response.ok("Borrado exitoso", "text/plain;charset=UTF-8");
     return responseBuilder.build();
-    
-  }
 
-  @Override
-  @GET
-  @Path("/obtenerPersonas/{min}/{max}")
-  @Produces(MediaType.APPLICATION_JSON)
-  public Response obtenerPersonas(@PathParam("min") int minimo, 
-      @PathParam("max") int maximo, @QueryParam("query") String consulta) {
-    
-    consulta = (consulta == null) ? "" : consulta;
-    Response.ResponseBuilder responseBuilder = null;
-    Par<Integer, ArrayList<Persona>> personas
-        = personasDao.obtenerPersonas(minimo, maximo, consulta);
-    responseBuilder = Response.ok(personas, "application/json;charset=UTF-8");
-    return responseBuilder.build();
-    
-  }
-
-  @Override
-  @GET
-  @Path("/obtenerPersona/{id}")
-  @Produces(MediaType.APPLICATION_JSON)
-  public Response obtenerPersona(@PathParam("id") int idUsuario) {
-    
-    Response.ResponseBuilder responseBuilder = null;
-    Persona persona = personasDao.obtenerPersona(idUsuario);
-    responseBuilder = Response.ok(persona, "application/json;charset=UTF-8");
-    return responseBuilder.build();
-    
   }
 
 }

@@ -1,8 +1,8 @@
-# CRUD - RESTFul 
-[![Build Status](https://travis-ci.org/LuisEGR/crud_java_tdd.svg?branch=master)](https://travis-ci.org/LuisEGR/crud_java_tdd) :octocat: 
+# CRUD - RESTFul
+[![Build Status](https://travis-ci.org/LuisEGR/crud_java_tdd.svg?branch=master)](https://travis-ci.org/LuisEGR/crud_java_tdd) :octocat:
 
 ---
-Ejemplo de CRUD en JAVA usando TDD con Travis CI 
+Ejemplo de CRUD en JAVA usando TDD con Travis CI
 
 ### Flujo de trabajo ###
 
@@ -11,7 +11,7 @@ Ejemplo de CRUD en JAVA usando TDD con Travis CI
 2. *Github* se comunica con *Travis* para la ejecución de las pruebas.
 3. En caso de que las pruebas sean negativas el programador debe corregir (el
    ícono de abajo del título de este README indica el estado del proyecto).
-4. Sí las pruebas fueron positivas, *Travis* despliega la aplicación en
+4. Si las pruebas fueron positivas, *Travis* despliega la aplicación en
    *Heroku*, para que todos puedan ver los últimos avances sin necesidad de
    correr el proyecto en sus máquinas.
 
@@ -35,17 +35,18 @@ Métodos disponibles:
 Documentación completa con API Blueprint:
 [https://luisegr.github.io/crud_java_tdd/](https://luisegr.github.io/crud_java_tdd/)
 
+Colleción de peticiones en [postman](https://www.getpostman.com/collections/11cc585217881624ee8a).
 
 ----
 ----
 Aplicaciones / Librerias / Framerowks utilizados:
 
-- [NetBeans IDE](https://netbeans.org/) 
+- [NetBeans IDE](https://netbeans.org/)
 - [Tomcat 8](http://tomcat.apache.org/)
 - [(Maven) - Software project management and comprehension tool](https://maven.apache.org/)
-- [Jersey - RESTful Web Services in Java](https://jersey.github.io/) 
-- [mysql-connector-java](https://mvnrepository.com/artifact/mysql/mysql-connector-java) 
-- [Jackson formerly known as the standard JSON library for Java](https://github.com/FasterXML/jackson) 
+- [Jersey - RESTful Web Services in Java](https://jersey.github.io/)
+- [mysql-connector-java](https://mvnrepository.com/artifact/mysql/mysql-connector-java)
+- [Jackson formerly known as the standard JSON library for Java](https://github.com/FasterXML/jackson)
 - [JUnit - programmer-friendly testing framework for Java 8](http://junit.org/)
 - [JUnit5 - programmer-friendly testing framework for Java 8](http://junit.org/)
 - [Heroku - Para desplegar aplicaciones web](https://dashboard.heroku.com/apps)

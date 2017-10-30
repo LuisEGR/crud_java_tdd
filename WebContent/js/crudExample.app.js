@@ -31,11 +31,11 @@ var crudExample = angular.module("EjemploCRUD", ['ngMaterial', 'md.data.table', 
           return $http.get(GLOBALS.URL_API + "/obtenerMunicipios/" + idEstado);
         },
         agregarUsuario: function (data) {
-          return $http.put(GLOBALS.URL_API + "/colocarPersona", data);
+          return $http.post(GLOBALS.URL_API + "/colocarPersona", data);
         },
 
         editarUsuario: function (data) {
-          return $http.post(GLOBALS.URL_API + "/actualizarPersona", data);
+          return $http.put(GLOBALS.URL_API + "/actualizarPersona", data);
         },
 
         eliminarUsuario: function (idUser) {
