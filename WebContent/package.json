@@ -7,7 +7,9 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "ESCOM",
   "license": "ISC",
@@ -22,6 +24,8 @@
     "angular-sanitize": "^1.5.5",
     "highcharts": "^6.0.2",
     "lodash": "^4.17.4",
-    "md-data-table": "^2.2.0"
-  }
+    "md-data-table": "^2.2.0",
+    "snyk": "^1.179.1"
+  },
+  "snyk": true
 }
