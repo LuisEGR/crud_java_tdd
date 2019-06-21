@@ -4,7 +4,9 @@
   "description": "Documentación de CrudREST Api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "docs"
@@ -12,6 +14,8 @@
   "author": "Luis E. González R.",
   "license": "ISC",
   "dependencies": {
-    "aglio": "^2.3.0"
-  }
+    "aglio": "^2.3.0",
+    "snyk": "^1.180.0"
+  },
+  "snyk": true
 }
