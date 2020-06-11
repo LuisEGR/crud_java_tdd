@@ -20,7 +20,7 @@
     "angular-material-icons": "^0.7.1",
     "angular-messages": "^1.5.5",
     "angular-sanitize": "^1.5.5",
-    "highcharts": "^6.0.2",
+    "highcharts": "^8.1.1",
     "lodash": "^4.17.4",
     "md-data-table": "^2.2.0"
   }
